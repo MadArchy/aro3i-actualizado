@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARO — Targeted Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ═══ GOOGLE ANALYTICS 4 ══════════════════════════════ -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37B93SDXSW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-37B93SDXSW');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T82P6KNL');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <script src="js/main.js"></script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T82P6KNL" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- ════════ NAV ════════ -->
+  <nav>
+    <span class="nav-logo" data-page="home" role="button" tabindex="0">ARO</span>
+    <button type="button" class="nav-cart-btn nav-cart-mobile" id="nav-cart-mobile" aria-label="Open shopping bag">
+      Bag<span class="shop-count shop-count--empty" aria-live="polite">0</span>
+    </button>
+    <button type="button" class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" data-page="home" id="nl-home">Home</a></li>
+      <li><a href="#" data-page="floss" id="nl-floss" class="nav-accent-floss">ARO-FLOSS</a></li>
+      <li><a href="#" data-page="pick" id="nl-pick" class="nav-accent-pick">ARO-PIK</a></li>
+      <li><a href="#" data-page="flow" id="nl-flow" class="nav-accent-flow">ARO-FLO</a></li>
+      <li><a href="#" data-page="ez" id="nl-ez" class="nav-accent-ez">ARO-EZ</a></li>
+      <li><a href="#" data-page="fuel" id="nl-fuel" class="nav-accent-fuel">ARO-FUEL</a></li>
+      <li class="nav-cart-li">
+        <button type="button" class="nav-cart-btn" id="nav-cart-toggle" aria-label="Open shopping bag" aria-expanded="false" aria-controls="shop-sheet">Bag<span class="shop-count shop-count--empty" aria-live="polite">0</span></button>
+      </li>
+      <li><a href="#" class="nav-cta" data-cart-open>Shop Now</a></li>
+    </ul>
+  </nav>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- ════════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════════ -->
+  <div id="page-home" class="page active">
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Precision Wellness System — Five Products</span>
+        <h1 class="hero-title">ARO<span class="accent-sub">Targeted Delivery</span></h1>
+        <p class="hero-slogan">"The smarter way to take your vitamins."</p>
+        <p class="hero-sub">Stop guessing if your vitamins and supplements are working. ARO delivers them exactly where
+          they need to go — for results you can actually feel.</p>
+        <div class="hero-actions">
+          <p class="hero-slogan">Explore our products.</p>
+        </div>
+        <div class="hero-pills">
+          <div class="hero-pill p-floss" data-page="floss"><span class="pdot pd-floss"></span>ARO-FLOSS</div>
+          <div class="hero-pill p-pick" data-page="pick"><span class="pdot pd-pick"></span>ARO-PIK</div>
+          <div class="hero-pill p-flow" data-page="flow"><span class="pdot pd-flow"></span>ARO-FLO</div>
+          <div class="hero-pill p-ez" data-page="ez"><span class="pdot pd-ez"></span>ARO-EZ</div>
+          <div class="hero-pill p-fuel" data-page="fuel"><span class="pdot pd-fuel"></span>ARO-FUEL</div>
+        </div>
+        <div class="hero-actions">
+          <button type="button" class="btn-teal" data-catalog-open>Shop Now</button>
+          <button type="button" class="btn-ghost" data-scroll-to="home-products">See How It
+            Works</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="band-item"><span class="bdot" style="background:var(--floss)"></span>Gingival Delivery</div>
+      <div class="band-item"><span class="bdot" style="background:var(--pick)"></span>Targeted Absorption</div>
+      <div class="band-item"><span class="bdot" style="background:var(--flow)"></span>Dissolvable Powder Vitamins</div>
+      <div class="band-item"><span class="bdot" style="background:var(--ez)"></span>Smarter Pills</div>
+      <div class="band-item"><span class="bdot" style="background:rgba(248,246,241,0.25)"></span>Patents Pending</div>
+      <div class="band-item"><span class="bdot" style="background:rgba(248,246,241,0.25)"></span>Clinically Designed
+      </div>
+    </div>
+
+    <section class="home-products" id="home-products">
+      <div class="home-sec-head reveal">
+        <div>
+          <span class="sec-label">01 — The System</span>
+          <h2 class="sec-h2">FIVE WAYS TO<br>DELIVER MORE.</h2>
+        </div>
+        <p class="dim" style="max-width:380px;font-size:16px;line-height:1.8;">Most vitamins and supplements never reach
+          their destination. ARO was engineered to change that.</p>
+      </div>
+      <div class="home-pgrid">
+        <div class="hpcard reveal" data-page="floss">
+          <div class="hpbar bar-floss"></div>
+          <div class="hpnum c-floss">01</div>
+          <div class="hpname">ARO-FLOSS</div>
+          <div class="hpsub c-floss">Vitamin-Coated Floss Picks</div>
+          <p class="hpdesc">Floss and deliver vitamins directly into your gum line at the same time. A daily
+            habit — now supercharged.</p>
+          <button type="button" class="hplink c-floss">Explore ARO Floss →</button>
+        </div>
+        <div class="hpcard reveal" data-page="pick">
+          <div class="hpbar bar-pick"></div>
+          <div class="hpnum c-pick">02</div>
+          <div class="hpname">ARO-PIK</div>
+          <div class="hpsub c-pick">Vitamin-Coated Gingival Strip</div>
+          <p class="hpdesc">A precision-coated strip that directly slides gently into the gumline, releasing vitamins exactly
+            where absorption is most powerful.  Perfect for those with tightly spaced-teeth, where floss is hard to reach.</p>
+          <button type="button" class="hplink c-pick">Explore ARO Pick →</button>
+        </div>
+        <div class="hpcard reveal" data-page="flow">
+          <div class="hpbar bar-flow"></div>
+          <div class="hpnum c-flow">03</div>
+          <div class="hpname">ARO-FLO</div>
+          <div class="hpsub c-flow">Dissolvable Vitamin Powder</div>
+          <p class="hpdesc">A complete vitamin powder that dissolves into a small shot or your favorite drink, making 
+          your daily dose something you will actually look forward to.</p>
+          <div class="hpcoming">Coming Soon</div>
+          <button type="button" class="hplink c-flow">Learn More →</button>
+        </div>
+        <div class="hpcard reveal" data-page="ez">
+          <div class="hpbar bar-ez"></div>
+          <div class="hpnum c-ez">04</div>
+          <div class="hpname">ARO-EZ</div>
+          <div class="hpsub c-ez">Smarter Pills</div>
+          <p class="hpdesc">Small, smooth, and pleasant to take — pills that feel and smell nothing like pills. Supplements you'll
+            actually stick with.</p>
+          <div class="hpcoming">Coming Soon</div>
+          <button type="button" class="hplink c-ez">Learn More →</button>
+        </div>
+        <div class="hpcard reveal" data-page="fuel">
+          <div class="hpbar bar-fuel"></div>
+          <div class="hpnum c-fuel">05</div>
+          <div class="hpname">ARO-FUEL</div>
+          <div class="hpsub c-fuel">Vitamin-Infused Protein</div>
+          <p class="hpdesc">A clean protein blend fused with a full daily vitamin matrix. Build, recover, and supplement — all
+            in a single scoop you'll actually enjoy drinking.</p>
+          <div class="hpcoming">Coming Soon</div>
+          <button type="button" class="hplink c-fuel">Learn More →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="phil-strip">
+      <div class="reveal">
+        <span class="sec-label">Why ARO</span>
+        <h2 class="phil-h2">YOUR BODY<br>DESERVES<br><span class="c-floss">BETTER.</span></h2>
+        <p class="phil-p">Most people take vitamins and supplements — and then wonder why they don't feel
+          different. The truth? Most of what you swallow never actually gets absorbed.</p>
+        <p class="phil-p">ARO was designed to solve that problem. Every product in our system is engineered around one
+          idea: <em>make it easier to deliver the right thing to the right place.</em></p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-box">
+          <div class="stat-val c-floss">5</div>
+          <div class="stat-lbl">Smarter Ways to Deliver Your Vitamins</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val c-pick" style="font-size:2.8rem;line-height:1.05;">First<br>Ever</div>
+          <div class="stat-lbl">Gingival Vitamin Delivery Pathway</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val c-flow" style="font-size:2.5rem;line-height:1.05;">Far<br>More</div>
+          <div class="stat-lbl">Effective Than Swallowing a Pill</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val c-ez" style="font-size:2.8rem;line-height:1.05;">Patents<br>Pending</div>
+          <div class="stat-lbl">Proprietary Technology</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe reveal">
+      <div>
+        <h2>THE SMARTER WAY TO TAKE YOUR VITAMINS.</h2>
+        <p class="stripe-sub">Stop guessing. Start feeling the difference.</p>
+      </div>
+      <button type="button" class="btn-blk" data-page="floss">Shop ARO System →</button>
+    </div>
+
+    <section class="section-pad" style="background:var(--black);">
+      <div class="reveal">
+        <span class="sec-label">03 — What People Say</span>
+        <h2 class="sec-h2" style="margin-bottom:3.5rem;">REAL RESULTS.</h2>
+      </div>
+      <div class="tgrid">
+        <div class="tcard reveal">
+          <div class="tline" style="background:var(--floss);box-shadow:0 0 10px var(--floss)"></div>
+          <p class="tq">"I've been using ARO Floss for three months and my dentist actually commented on how much better
+            my gums look. I didn't change anything else about my routine."</p>
+          <div class="tname">M. Reyes</div>
+          <span class="trole">ARO Floss — 3 Months</span>
+        </div>
+        <div class="tcard reveal">
+          <div class="tline" style="background:var(--pick);box-shadow:0 0 10px var(--pick)"></div>
+          <p class="tq">"ARO Pick takes 30 seconds and I actually feel the difference in my energy levels. I was
+            skeptical that a floss-type thing could do that but here we are."</p>
+          <div class="tname">D. Chen</div>
+          <span class="trole">ARO Pick — 6 Weeks</span>
+        </div>
+        <div class="tcard reveal">
+          <div class="tline" style="background:var(--floss);box-shadow:0 0 10px var(--floss)"></div>
+          <p class="tq">"Finally — something that's actually <em>fun</em> to add to my morning. The concept is so
+            clever. I tell everyone about it."</p>
+          <div class="tname">T. Williams</div>
+          <span class="trole">ARO Floss — 2 Months</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand">
+          <span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Engineered for people who want to know their supplements are actually
+            working.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About ARO</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+            <li><a>Careers</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Subscribe</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <span>© 2025 ARO. All rights reserved. Patents Pending.</span>
+        <span class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+     FLOSS PAGE
+════════════════════════════════════════ -->
+  <div id="page-floss" class="page">
+    <section class="prod-hero" style="background:linear-gradient(135deg,var(--black) 55%,rgba(0,201,177,0.07) 100%);">
+      <div class="prod-hero-text">
+        <span class="tag tag-floss">ARO-FLOSS</span>
+        <div class="prod-hero-title">VITAMIN-<br>COATED<br>FLOSS.</div>
+        <p class="prod-tagline">"Floss your teeth. Feed your body."</p>
+        <p class="prod-hero-desc">ARO Floss is the world's first vitamin-coated floss pick. While you floss, vitamins are released directly into your gum tissue — creating a whole new way to supplement.</p>
+        <div class="prod-hero-video-slot" aria-hidden="true">
+          <video class="prod-hero-video" id="floss-hero-video" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="videos/aro-floss.mp4" type="video/mp4" />
+          </video>
+          <div class="prod-hero-video-veil" aria-hidden="true"></div>
+        </div>
+        <div class="prod-hero-actions">
+          <button type="button" class="btn-teal">Join the Waitlist</button>
+          <button type="button" class="btn-ghost" data-add-product="floss">Add to bag</button>
+          <button type="button" class="btn-ghost" data-scroll-to="floss-hiw">See How It Works</button>
+        </div>
+      </div>
+      <div class="prod-hero-img"
+        style="background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(0,201,177,0.1) 0%,transparent 70%);">
+        <div class="illus-wrap" style="align-items:center;justify-content:center;position:relative;">
+          <div class="prod-img-wrap floss-img">
+            <div class="prod-img-glow"
+              style="background:radial-gradient(ellipse 70% 70% at 50% 45%,rgba(0,201,177,0.22) 0%,transparent 70%);">
+            </div>
+            <img src="aro_floss.png" alt="ARO Floss — Vitamin-Coated Floss Pick" class="prod-img-el"
+              style="filter:drop-shadow(0 0 18px rgba(0,201,177,0.35)) drop-shadow(0 0 40px rgba(0,201,177,0.15));" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS - FLOSS -->
+    <section class="hiw-section" id="floss-hiw">
+      <span class="sec-label">How It Works</span>
+      <h2 class="sec-h2 c-floss">FLOSS. FEED.<br>FEEL BETTER.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step reveal">
+          <div class="hiw-n">01</div>
+          <div class="hiw-icon" style="background:rgba(0,201,177,0.12);">🧵</div>
+          <div class="hiw-t">FLOSS LIKE NORMAL</div>
+          <p class="hiw-b">Pick up an ARO Floss pick just like any other. Slide the vitamin-coated floss between your
+            teeth — the same motion you already do every day.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">02</div>
+          <div class="hiw-icon" style="background:rgba(0,201,177,0.12);">💊</div>
+          <div class="hiw-t">VITAMINS RELEASE</div>
+          <p class="hiw-b">As the floss moves through the tight spaces between your teeth, the vitamin coating is gently
+            dislodged — depositing directly into the gingival crevice (the tiny gap between your tooth and gum).</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">03</div>
+          <div class="hiw-icon" style="background:rgba(0,201,177,0.12);">⚡</div>
+          <div class="hiw-t">YOUR BODY ABSORBS</div>
+          <p class="hiw-b">The vitamins absorb through the junctional epithelium — specialized tissue inside the gumline
+            that creates both a systemic response (into your bloodstream) and a local mucosal response. It's a delivery
+            route that bypasses the gut entirely.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO PLACEHOLDER - FLOSS -->
+    <section class="vid-section">
+      <span class="sec-label">See It In Action</span>
+      <h2 class="sec-h2" style="margin-bottom:.5rem;">WATCH HOW<br>ARO FLOSS WORKS.</h2>
+      <div class="vid-wrap">
+        <div class="vid-bg-text">FLOSS</div>
+        <div class="vid-center">
+          <div class="vid-play">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <polygon points="10,6 24,14 10,22" fill="rgba(248,246,241,0.7)" />
+            </svg>
+          </div>
+          <div class="vid-label">ARO Floss — How It Works</div>
+          <div class="vid-note">Video coming soon — placeholder for product explainer</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits-section">
+      <span class="sec-label">Why ARO Floss</span>
+      <h2 class="sec-h2">THE BENEFITS.</h2>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">🎯</div>
+          <div class="ben-t">DIRECT DELIVERY</div>
+          <p class="ben-b">Vitamins go straight into your gum tissue — not into your stomach, where absorption can be
+            hit or miss. The gingival crevice is one of the most efficient delivery sites in the body.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">⏱</div>
+          <div class="ben-t">ZERO EXTRA TIME</div>
+          <p class="ben-b">You're already flossing (or you should be). ARO Floss adds zero extra steps to your day —
+            your vitamin routine is now built into something you do anyway.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">🔬</div>
+          <div class="ben-t">SYSTEMIC + MUCOSAL</div>
+          <p class="ben-b">Our technology creates both a systemic response (into your bloodstream) and a mucosal
+            response through the junctional epithelium — a dual-action effect unique to this delivery route.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">🌿</div>
+          <div class="ben-t">GUM-FRIENDLY FORMULA</div>
+          <p class="ben-b">The vitamin coating is gentle on gum tissue and formulated to work with the body's natural
+            gingival environment — not against it.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">✅</div>
+          <div class="ben-t">NO PILLS TO SWALLOW</div>
+          <p class="ben-b">For this delivery route, there's nothing to choke down, nothing that smells bad, and no
+            aftertaste. Just floss — and done.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(0,201,177,0.12);">🏛</div>
+          <div class="ben-t">PATENTS PENDING</div>
+          <p class="ben-b">ARO's gingival vitamin delivery technology is proprietary. We pioneered the use of the
+            junctional epithelium as a vitamin delivery pathway — and we're protecting it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCIENCE CALLOUT -->
+    <section class="sci-callout">
+      <div class="sci-inner reveal">
+        <div>
+          <div class="sci-badge">🔬 The Science</div>
+          <h2 class="sci-h c-floss">WHY THE GUMLINE<br>CHANGES EVERYTHING.</h2>
+          <p class="sci-p" style="margin-bottom:1.25rem;">Most delivery routes — your cheeks, tongue, even your gut —
+            are protected by thick, tightly sealed tissue designed to keep things out. The <strong
+              style="color:var(--floss)">Junctional Epithelium (JE)</strong> is different. It's a thin, naturally
+            "leaky" tissue at the very base of the gingival sulcus — the tiny groove where your gum meets your tooth.
+          </p>
+          <p class="sci-p" style="margin-bottom:1.25rem;">Think of it as the body's hidden gate. Unlike the thick
+            barrier of your cheek lining, the JE has wide intercellular spaces and minimal tight junctions — making it
+            exceptionally permeable to molecules placed directly into the sulcus.</p>
+          <p class="sci-p">When ARO Floss deposits vitamins into that groove, they absorb straight through the JE into
+            richly vascularized connective tissue — entering your bloodstream without ever touching your stomach.
+            Published in <em>Nature Biomedical Engineering</em>, 2026.</p>
+        </div>
+        <div class="sci-vis">
+          <!-- ACCURATE ANATOMY DIAGRAM based on Gingiva_Diagram.png and Science.pdf -->
+          <svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+            <defs>
+              <linearGradient id="tooth-enamel" x1="0%" y1="0%" x2="10%" y2="100%">
+                <stop offset="0%" stop-color="#deded6" />
+                <stop offset="100%" stop-color="#b8b8b0" />
+              </linearGradient>
+              <linearGradient id="gum-tissue" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c0606a" />
+                <stop offset="100%" stop-color="#9a4050" />
+              </linearGradient>
+              <linearGradient id="connective" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7a3545" />
+                <stop offset="100%" stop-color="#5a2535" />
+              </linearGradient>
+              <linearGradient id="je-layer" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00C9B1" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#00C9B1" stop-opacity="0.15" />
+              </linearGradient>
+              <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#00C9B1" opacity="0.85" />
+              </marker>
+              <marker id="arrowhead-w" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="rgba(248,246,241,0.5)" />
+              </marker>
+            </defs>
+
+            <!-- ── BACKGROUND ── -->
+            <rect width="340" height="420" fill="#0f0f0f" rx="12" />
+
+            <!-- ── TITLE ── -->
+            <text x="170" y="22" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              font-weight="600" fill="rgba(248,246,241,0.35)" letter-spacing="2">CROSS-SECTION VIEW</text>
+
+            <!-- ── GUM (oral epithelium + connective tissue bulk) ── -->
+            <!-- Left gum wall (sulcular epithelium side) -->
+            <path
+              d="M30 45 L30 370 Q30 385 50 385 L130 385 L130 200 Q130 185 118 175 Q106 165 100 150 L95 100 Q93 70 100 55 Q108 42 120 40 L30 40 Z"
+              fill="url(#gum-tissue)" opacity="0.9" />
+
+            <!-- Right gum / connective tissue (behind JE) -->
+            <path d="M148 130 L148 370 L310 370 L310 40 L180 40 Q165 42 158 55 Q150 70 148 100 Z"
+              fill="url(#connective)" opacity="0.85" />
+
+            <!-- ── TOOTH ── -->
+            <!-- Tooth body — right side of crevice -->
+            <path d="M100 40 Q112 28 130 26 Q160 24 170 26 Q182 28 185 40 L185 200 L100 200 Z"
+              fill="url(#tooth-enamel)" />
+            <!-- Tooth root continuing down -->
+            <path d="M100 200 L100 380 L185 380 L185 200 Z" fill="#c8c8be" />
+            <!-- Tooth surface highlight -->
+            <path d="M108 40 L108 190" stroke="rgba(255,255,255,0.12)" stroke-width="6" stroke-linecap="round" />
+
+            <!-- ── GINGIVAL SULCUS (the groove / crevice space) ── -->
+            <!-- The crevice is the gap between the left gum wall (sulcular epithelium) and the tooth surface -->
+            <!-- Left wall of sulcus = sulcular epithelium (part of gum, facing tooth) -->
+            <rect x="84" y="45" width="16" height="130" rx="3" fill="#b85060" opacity="0.9" />
+            <!-- Crevice space itself -->
+            <rect x="100" y="45" width="28" height="130" rx="0" fill="rgba(0,0,0,0.55)" />
+            <!-- Crevice space subtle tint -->
+            <rect x="100" y="45" width="28" height="130" fill="rgba(0,201,177,0.06)" />
+
+            <!-- ── JUNCTIONAL EPITHELIUM ── -->
+            <!-- JE is at the BASE of the sulcus — the floor, spanning from tooth surface to gum -->
+            <!-- It's a thin band running roughly horizontally at the base of the crevice -->
+            <rect x="84" y="165" width="60" height="18" rx="3" fill="url(#je-layer)" stroke="#00C9B1" stroke-width="1.2"
+              stroke-opacity="0.7" />
+            <!-- JE subtle glow -->
+            <rect x="84" y="165" width="60" height="18" rx="3" fill="#00C9B1" opacity="0.07" />
+
+            <!-- ── ARO FLOSS at top of crevice ── -->
+            <!-- Floss string spanning across crevice opening -->
+            <line x1="80" y1="44" x2="186" y2="44" stroke="#00C9B1" stroke-width="4" stroke-linecap="round" />
+            <line x1="80" y1="44" x2="186" y2="44" stroke="#00e5cc" stroke-width="1.5" stroke-linecap="round"
+              opacity="0.6" />
+            <!-- Floss glow -->
+            <line x1="80" y1="44" x2="186" y2="44" stroke="#00C9B1" stroke-width="10" opacity="0.1"
+              stroke-linecap="round" />
+            <!-- Vitamin dots on floss -->
+            <circle cx="100" cy="44" r="4.5" fill="#00C9B1" />
+            <circle cx="116" cy="44" r="4" fill="#00e5cc" opacity="0.9" />
+            <circle cx="132" cy="44" r="4.5" fill="#00C9B1" />
+            <circle cx="148" cy="44" r="4" fill="#00e5cc" opacity="0.85" />
+            <circle cx="163" cy="44" r="4" fill="#00C9B1" />
+
+            <!-- ── VITAMIN PARTICLES depositing down into sulcus ── -->
+            <circle cx="114" cy="70" r="4" fill="#00C9B1" opacity="0.9" />
+            <circle cx="114" cy="92" r="3.5" fill="#00e5cc" opacity="0.75" />
+            <circle cx="114" cy="113" r="4" fill="#00C9B1" opacity="0.7" />
+            <circle cx="114" cy="134" r="3.5" fill="#00e5cc" opacity="0.6" />
+            <circle cx="114" cy="153" r="3" fill="#00C9B1" opacity="0.5" />
+            <!-- Tiny downward arrows between particles -->
+            <line x1="114" y1="76" x2="114" y2="84" stroke="#00C9B1" stroke-width="1" opacity="0.4"
+              marker-end="url(#arrowhead)" />
+            <line x1="114" y1="98" x2="114" y2="106" stroke="#00C9B1" stroke-width="1" opacity="0.4"
+              marker-end="url(#arrowhead)" />
+            <line x1="114" y1="119" x2="114" y2="127" stroke="#00C9B1" stroke-width="1" opacity="0.4"
+              marker-end="url(#arrowhead)" />
+            <line x1="114" y1="140" x2="114" y2="148" stroke="#00C9B1" stroke-width="1" opacity="0.4"
+              marker-end="url(#arrowhead)" />
+
+            <!-- ── DIFFUSION THROUGH JE into connective tissue ── -->
+            <!-- Particles spreading right-ward through JE into connective tissue -->
+            <circle cx="168" cy="174" r="3.5" fill="#00C9B1" opacity="0.75" />
+            <circle cx="192" cy="180" r="3" fill="#00C9B1" opacity="0.6" />
+            <circle cx="215" cy="172" r="3.5" fill="#00e5cc" opacity="0.55" />
+            <circle cx="238" cy="182" r="3" fill="#00C9B1" opacity="0.45" />
+            <circle cx="258" cy="170" r="2.5" fill="#00C9B1" opacity="0.35" />
+            <!-- Horizontal diffusion arrows -->
+            <line x1="155" y1="174" x2="248" y2="174" stroke="#00C9B1" stroke-width="1.2" opacity="0.3"
+              marker-end="url(#arrowhead)" stroke-dasharray="4,3" />
+
+            <!-- ── BLOOD VESSEL in connective tissue ── -->
+            <ellipse cx="268" cy="240" rx="18" ry="28" fill="#c0404a" opacity="0.7" stroke="#e06070" stroke-width="1" />
+            <ellipse cx="268" cy="240" rx="12" ry="21" fill="#d05060" opacity="0.5" />
+            <!-- Blood vessel label -->
+            <line x1="268" y1="213" x2="268" y2="195" stroke="rgba(248,246,241,0.3)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="270" y="190" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.45)"
+              font-weight="600">BLOOD</text>
+            <text x="270" y="200" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.45)"
+              font-weight="600">VESSEL</text>
+            <!-- Arrow from diffused particles to blood vessel -->
+            <line x1="258" y1="178" x2="262" y2="210" stroke="#00C9B1" stroke-width="1.2" opacity="0.5"
+              marker-end="url(#arrowhead)" stroke-dasharray="3,3" />
+
+            <!-- ── LABELS ── -->
+            <!-- ARO Floss label -->
+            <line x1="186" y1="44" x2="228" y2="30" stroke="rgba(0,201,177,0.4)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="231" y="24" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700" fill="#00C9B1">ARO
+              FLOSS</text>
+            <text x="231" y="35" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(248,246,241,0.35)">vitamin-coated</text>
+
+            <!-- Tooth label -->
+            <line x1="185" y1="100" x2="218" y2="90" stroke="rgba(248,246,241,0.2)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="221" y="87" font-family="'DM Sans',sans-serif" font-size="10" font-weight="600"
+              fill="rgba(248,246,241,0.55)">TOOTH</text>
+
+            <!-- Gingival sulcus / crevice label -->
+            <line x1="100" y1="105" x2="68" y2="105" stroke="rgba(248,246,241,0.2)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="4" y="98" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600"
+              fill="rgba(248,246,241,0.45)">GINGIVAL</text>
+            <text x="4" y="109" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600"
+              fill="rgba(248,246,241,0.45)">SULCUS</text>
+
+            <!-- Sulcular epithelium label -->
+            <line x1="84" y1="110" x2="55" y2="130" stroke="rgba(248,246,241,0.15)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="2" y="128" font-family="'DM Sans',sans-serif" font-size="8.5"
+              fill="rgba(248,246,241,0.32)">Sulcular</text>
+            <text x="2" y="138" font-family="'DM Sans',sans-serif" font-size="8.5"
+              fill="rgba(248,246,241,0.32)">Epithelium</text>
+
+            <!-- JE label — THE KEY LABEL -->
+            <line x1="84" y1="174" x2="50" y2="195" stroke="rgba(0,201,177,0.5)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="2" y="190" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700"
+              fill="#00C9B1">JUNCTIONAL</text>
+            <text x="2" y="202" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700"
+              fill="#00C9B1">EPITHELIUM</text>
+            <text x="2" y="213" font-family="'DM Sans',sans-serif" font-size="8.5" fill="rgba(0,201,177,0.55)">"the open
+              gate"</text>
+
+            <!-- Connective tissue label -->
+            <text x="152" y="230" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600">CONNECTIVE</text>
+            <text x="152" y="241" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600">TISSUE</text>
+
+            <!-- Gum label -->
+            <text x="36" y="280" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600" transform="rotate(-90,36,280)">GUM TISSUE</text>
+
+            <!-- Bloodstream final arrow -->
+            <line x1="268" y1="270" x2="268" y2="310" stroke="#00C9B1" stroke-width="1.5" opacity="0.5"
+              marker-end="url(#arrowhead)" stroke-dasharray="4,3" />
+            <text x="225" y="328" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700" fill="#00C9B1">→
+              BLOODSTREAM</text>
+            <text x="225" y="340" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(248,246,241,0.35)">systemic absorption</text>
+
+            <!-- Step callout numbers -->
+            <circle cx="114" cy="44" r="10" fill="none" stroke="#00C9B1" stroke-width="1.5" opacity="0.6" />
+            <text x="114" y="48" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9" font-weight="700"
+              fill="#00C9B1">1</text>
+            <circle cx="114" cy="134" r="10" fill="none" stroke="#00C9B1" stroke-width="1.5" opacity="0.5" />
+            <text x="114" y="138" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#00C9B1">2</text>
+            <circle cx="200" cy="174" r="10" fill="none" stroke="#00C9B1" stroke-width="1.5" opacity="0.5" />
+            <text x="200" y="178" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#00C9B1">3</text>
+            <circle cx="268" cy="320" r="10" fill="none" stroke="#00C9B1" stroke-width="1.5" opacity="0.5" />
+            <text x="268" y="324" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#00C9B1">4</text>
+
+            <!-- Step legend at bottom -->
+            <line x1="20" y1="358" x2="320" y2="358" stroke="rgba(248,246,241,0.06)" stroke-width="1" />
+            <text x="20" y="372" font-family="'DM Sans',sans-serif" font-size="8" fill="rgba(0,201,177,0.7)">① Vitamins
+              on floss ② Deposit into sulcus ③ Diffuse thru JE ④ Enter bloodstream</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod-cta" style="background:var(--mid);">
+      <span class="tag tag-floss">ARO-FLOSS</span>
+      <h2>READY TO FLOSS<br><span class="c-floss">SMARTER?</span></h2>
+      <p>Join thousands who've turned their daily flossing habit into a full vitamin delivery routine.</p>
+      <div class="prod-cta-actions">
+        <button type="button" class="btn-teal">Join the Waitlist</button>
+        <button type="button" class="btn-ghost" data-add-product="floss">Add to bag</button>
+        <button type="button" class="btn-ghost" data-page="pick">Next: ARO Pick →</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand"><span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Patents Pending.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot"><span>© 2025 ARO. All rights reserved. Patents Pending.</span><span
+          class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span></div>
+    </footer>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+     ARO PICK PAGE
+════════════════════════════════════════ -->
+  <div id="page-pick" class="page">
+    <section class="prod-hero" style="background:linear-gradient(135deg,var(--black) 55%,rgba(180,143,255,0.07) 100%);">
+      <div class="prod-hero-text">
+        <span class="tag tag-pick">ARO-PIK</span>
+        <div class="prod-hero-title">SLIDE IN.<br>ABSORB<br>MORE.</div>
+        <p class="prod-tagline">"30 seconds at the gumline. All-day results."</p>
+        <p class="prod-hero-desc">ARO Pick is a precision-designed vitamin strip that gently slides into the gingival
+          crevice — releasing its vitamin payload exactly where your body absorbs it most efficiently.</p>
+        <div class="prod-hero-video-slot" aria-hidden="true">
+          <video class="prod-hero-video" id="pick-hero-video" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="videos/aro-pik.mp4" type="video/mp4" />
+          </video>
+          <div class="prod-hero-video-veil" aria-hidden="true"></div>
+        </div>
+        <div class="prod-hero-actions">
+          <button type="button" class="btn-teal btn-waitlist-pick">Join the Waitlist</button>
+          <button type="button" class="btn-ghost" data-add-product="pick">Add to bag</button>
+          <button type="button" class="btn-ghost" data-scroll-to="pick-hiw">See How It Works</button>
+        </div>
+      </div>
+      <div class="prod-hero-img"
+        style="background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(180,143,255,0.1) 0%,transparent 70%);">
+        <div class="illus-wrap" style="align-items:center;justify-content:center;position:relative;">
+          <div class="prod-img-wrap pick-img">
+            <div class="prod-img-glow"
+              style="background:radial-gradient(ellipse 70% 70% at 50% 45%,rgba(180,143,255,0.22) 0%,transparent 70%);">
+            </div>
+            <img src="aro_pick.png" alt="ARO Pick — Vitamin-Coated Gingival Strip" class="prod-img-el"
+              style="filter:drop-shadow(0 0 18px rgba(180,143,255,0.35)) drop-shadow(0 0 40px rgba(180,143,255,0.15));" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hiw-section" id="pick-hiw">
+      <span class="sec-label">How It Works</span>
+      <h2 class="sec-h2 c-pick">SLIDE. AGITATE.<br>ABSORB.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step reveal">
+          <div class="hiw-n">01</div>
+          <div class="hiw-icon" style="background:rgba(180,143,255,0.12);">🎯</div>
+          <div class="hiw-t">INSERT THE STRIP</div>
+          <p class="hiw-b">Hold ARO Pick like a pen. Gently slide the tip of the vitamin-coated strip into the gingival
+            crevice — the natural groove between your tooth and gum. It's completely comfortable when done correctly.
+          </p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">02</div>
+          <div class="hiw-icon" style="background:rgba(180,143,255,0.12);">🔄</div>
+          <div class="hiw-t">GENTLY AGITATE</div>
+          <p class="hiw-b">With a few gentle back-and-forth strokes, the vitamin coating is dislodged from the strip and
+            deposits directly into the crevice. The motion takes about 10–15 seconds per tooth group.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">03</div>
+          <div class="hiw-icon" style="background:rgba(180,143,255,0.12);">⚡</div>
+          <div class="hiw-t">DEEP ABSORPTION</div>
+          <p class="hiw-b">Vitamins absorb directly through the junctional epithelium — a highly permeable tissue that
+            allows nutrients to enter both the local mucosal system and your bloodstream. No digestion needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vid-section">
+      <span class="sec-label">See It In Action</span>
+      <h2 class="sec-h2" style="margin-bottom:.5rem;">WATCH HOW<br>ARO PICK WORKS.</h2>
+      <div class="vid-wrap">
+        <div class="vid-bg-text" style="color:rgba(180,143,255,0.04)">PICK</div>
+        <div class="vid-center">
+          <div class="vid-play" style="border-color:rgba(180,143,255,0.4)">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <polygon points="10,6 24,14 10,22" fill="rgba(180,143,255,0.8)" />
+            </svg>
+          </div>
+          <div class="vid-label" style="color:rgba(180,143,255,0.5);">ARO Pick — How It Works</div>
+          <div class="vid-note">Video coming soon — placeholder for product explainer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <span class="sec-label">Why ARO Pick</span>
+      <h2 class="sec-h2">THE BENEFITS.</h2>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">📍</div>
+          <div class="ben-t">PRECISION PLACEMENT</div>
+          <p class="ben-b">Unlike flossing, ARO Pick is designed for targeted delivery at specific points along the
+            gumline — giving you control over exactly where vitamins are applied.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">🔬</div>
+          <div class="ben-t">HIGHEST BIOAVAILABILITY</div>
+          <p class="ben-b">Direct delivery to the junctional epithelium means vitamins enter your system without the
+            losses that happen through digestion. More of what you take actually works.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">🤝</div>
+          <div class="ben-t">DENTIST-INFORMED DESIGN</div>
+          <p class="ben-b">The ARO Pick tip is specifically designed to be gentle and non-traumatic — safe for regular
+            use and designed with periodontal considerations in mind.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">⚙️</div>
+          <div class="ben-t">PAIRS WITH ARO FLOSS</div>
+          <p class="ben-b">Use ARO Floss for your daily routine and ARO Pick for a deeper targeted session. Together,
+            they create comprehensive gingival vitamin delivery across your entire mouth.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">✨</div>
+          <div class="ben-t">ALSO CLEANS</div>
+          <p class="ben-b">In addition to vitamin delivery, ARO Pick helps dislodge debris from the gingival crevice —
+            supporting better periodontal health at the same time.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(180,143,255,0.12);">🏛</div>
+          <div class="ben-t">PROPRIETARY TECHNOLOGY</div>
+          <p class="ben-b">ARO's gingival strip delivery system is covered under patents pending. This is a
+            first-of-its-kind approach to targeted vitamin delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCIENCE CALLOUT - PICK -->
+    <section class="sci-callout">
+      <div class="sci-inner reveal">
+        <div>
+          <div class="sci-badge" style="color:var(--pick);border-color:rgba(180,143,255,0.3);">🔬 The Science</div>
+          <h2 class="sci-h c-pick">THE HIDDEN GATE<br>INSIDE YOUR MOUTH.</h2>
+          <p class="sci-p" style="margin-bottom:1.25rem;">Your mouth is not a uniform surface. The cheek lining and
+            tongue are thick, tightly sealed barriers — designed by evolution to keep things out. But at the very base
+            of the gingival sulcus sits a completely different tissue: the <strong style="color:var(--pick)">Junctional
+              Epithelium (JE)</strong>.</p>
+          <p class="sci-p" style="margin-bottom:1.25rem;">The JE is thin, non-keratinized, and has naturally wide
+            intercellular spaces — making it a high-permeability "open gate." It's also surrounded by rich vasculature
+            and lymphatic drainage, meaning whatever gets through goes directly into systemic circulation.</p>
+          <p class="sci-p">ARO Pick's precision-tapered strip is engineered specifically to reach this tissue — 1 to 3mm
+            deep into the sulcus. At that depth, vitamins are shielded from saliva washout and salivary enzymes,
+            absorbed directly where it counts. Published in <em>Nature Biomedical Engineering</em>, 2026.</p>
+        </div>
+        <div class="sci-vis">
+          <!-- PICK ANATOMY DIAGRAM — strip inserted into sulcus -->
+          <svg viewBox="0 0 340 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+            <defs>
+              <linearGradient id="tooth-pick" x1="0%" y1="0%" x2="10%" y2="100%">
+                <stop offset="0%" stop-color="#deded6" />
+                <stop offset="100%" stop-color="#b8b8b0" />
+              </linearGradient>
+              <linearGradient id="gum-pick" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c0606a" />
+                <stop offset="100%" stop-color="#9a4050" />
+              </linearGradient>
+              <linearGradient id="conn-pick" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#7a3545" />
+                <stop offset="100%" stop-color="#5a2535" />
+              </linearGradient>
+              <linearGradient id="strip-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#B48FFF" />
+                <stop offset="100%" stop-color="#8B6FCC" />
+              </linearGradient>
+              <linearGradient id="je-pick" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#B48FFF" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#B48FFF" stop-opacity="0.15" />
+              </linearGradient>
+              <marker id="arr-pick" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <polygon points="0 0, 6 3, 0 6" fill="#B48FFF" opacity="0.85" />
+              </marker>
+            </defs>
+
+            <rect width="340" height="420" fill="#0f0f0f" rx="12" />
+            <text x="170" y="22" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              font-weight="600" fill="rgba(248,246,241,0.35)" letter-spacing="2">CROSS-SECTION VIEW</text>
+
+            <!-- Gum tissue left wall -->
+            <path
+              d="M30 45 L30 370 Q30 385 50 385 L130 385 L130 200 Q130 185 118 175 Q106 165 100 150 L95 100 Q93 70 100 55 Q108 42 120 40 L30 40 Z"
+              fill="url(#gum-pick)" opacity="0.9" />
+            <!-- Connective tissue right -->
+            <path d="M148 130 L148 370 L310 370 L310 40 L180 40 Q165 42 158 55 Q150 70 148 100 Z" fill="url(#conn-pick)"
+              opacity="0.85" />
+            <!-- Tooth -->
+            <path d="M100 40 Q112 28 130 26 Q160 24 170 26 Q182 28 185 40 L185 200 L100 200 Z"
+              fill="url(#tooth-pick)" />
+            <path d="M100 200 L100 380 L185 380 L185 200 Z" fill="#c8c8be" />
+            <path d="M108 40 L108 190" stroke="rgba(255,255,255,0.12)" stroke-width="6" stroke-linecap="round" />
+
+            <!-- Sulcular epithelium wall -->
+            <rect x="84" y="45" width="16" height="130" rx="3" fill="#b85060" opacity="0.9" />
+            <!-- Crevice space -->
+            <rect x="100" y="45" width="28" height="130" rx="0" fill="rgba(0,0,0,0.55)" />
+            <rect x="100" y="45" width="28" height="130" fill="rgba(180,143,255,0.06)" />
+
+            <!-- JE at base of sulcus -->
+            <rect x="84" y="165" width="60" height="18" rx="3" fill="url(#je-pick)" stroke="#B48FFF" stroke-width="1.2"
+              stroke-opacity="0.7" />
+            <rect x="84" y="165" width="60" height="18" rx="3" fill="#B48FFF" opacity="0.06" />
+
+            <!-- ARO PICK STRIP inserted into the crevice -->
+            <!-- Handle top -->
+            <rect x="106" y="30" width="14" height="20" rx="3" fill="#252525" stroke="rgba(180,143,255,0.3)"
+              stroke-width="1" />
+            <!-- Strip body going down into crevice -->
+            <rect x="109" y="44" width="8" height="118" rx="3" fill="url(#strip-g)" stroke="rgba(180,143,255,0.5)"
+              stroke-width="0.5" />
+            <!-- Vitamin coating dots on strip -->
+            <circle cx="113" cy="58" r="3.5" fill="#B48FFF" opacity="0.95" />
+            <circle cx="113" cy="72" r="3" fill="#c8aaff" opacity="0.9" />
+            <circle cx="113" cy="86" r="3.5" fill="#B48FFF" opacity="0.9" />
+            <circle cx="113" cy="100" r="3" fill="#c8aaff" opacity="0.85" />
+            <circle cx="113" cy="114" r="3.5" fill="#B48FFF" opacity="0.8" />
+            <circle cx="113" cy="128" r="3" fill="#c8aaff" opacity="0.75" />
+            <circle cx="113" cy="148" r="3" fill="#B48FFF" opacity="0.6" />
+            <!-- Strip glow -->
+            <rect x="107" y="44" width="12" height="118" rx="3" fill="#B48FFF" opacity="0.06" />
+
+            <!-- Depth indicator — 1–3mm bracket -->
+            <line x1="128" y1="45" x2="128" y2="163" stroke="rgba(180,143,255,0.5)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <line x1="124" y1="45" x2="132" y2="45" stroke="rgba(180,143,255,0.5)" stroke-width="1" />
+            <line x1="124" y1="163" x2="132" y2="163" stroke="rgba(180,143,255,0.5)" stroke-width="1" />
+            <text x="133" y="108" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(180,143,255,0.7)"
+              font-weight="600">1–3mm</text>
+            <text x="133" y="119" font-family="'DM Sans',sans-serif" font-size="8.5"
+              fill="rgba(248,246,241,0.3)">deep</text>
+
+            <!-- Vitamin particles diffusing through JE -->
+            <circle cx="165" cy="172" r="3" fill="#B48FFF" opacity="0.75" />
+            <circle cx="188" cy="178" r="2.8" fill="#B48FFF" opacity="0.6" />
+            <circle cx="210" cy="170" r="3" fill="#c8aaff" opacity="0.55" />
+            <circle cx="232" cy="180" r="2.5" fill="#B48FFF" opacity="0.45" />
+            <line x1="152" y1="174" x2="245" y2="174" stroke="#B48FFF" stroke-width="1.2" opacity="0.3"
+              marker-end="url(#arr-pick)" stroke-dasharray="4,3" />
+
+            <!-- Blood vessel -->
+            <ellipse cx="268" cy="240" rx="18" ry="28" fill="#c0404a" opacity="0.7" stroke="#e06070" stroke-width="1" />
+            <ellipse cx="268" cy="240" rx="12" ry="21" fill="#d05060" opacity="0.5" />
+            <line x1="268" y1="213" x2="268" y2="195" stroke="rgba(248,246,241,0.3)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="270" y="190" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.45)"
+              font-weight="600">BLOOD</text>
+            <text x="270" y="200" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.45)"
+              font-weight="600">VESSEL</text>
+            <line x1="258" y1="178" x2="262" y2="210" stroke="#B48FFF" stroke-width="1.2" opacity="0.5"
+              marker-end="url(#arr-pick)" stroke-dasharray="3,3" />
+
+            <!-- Labels -->
+            <line x1="117" y1="30" x2="148" y2="20" stroke="rgba(180,143,255,0.4)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="151" y="17" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700" fill="#B48FFF">ARO
+              PICK STRIP</text>
+            <text x="151" y="28" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(248,246,241,0.35)">vitamin-coated</text>
+
+            <line x1="185" y1="100" x2="218" y2="90" stroke="rgba(248,246,241,0.2)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="221" y="87" font-family="'DM Sans',sans-serif" font-size="10" font-weight="600"
+              fill="rgba(248,246,241,0.55)">TOOTH</text>
+
+            <line x1="100" y1="95" x2="68" y2="95" stroke="rgba(248,246,241,0.2)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="4" y="88" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600"
+              fill="rgba(248,246,241,0.45)">GINGIVAL</text>
+            <text x="4" y="99" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600"
+              fill="rgba(248,246,241,0.45)">SULCUS</text>
+
+            <line x1="84" y1="174" x2="50" y2="195" stroke="rgba(180,143,255,0.5)" stroke-width="1"
+              stroke-dasharray="3,2" />
+            <text x="2" y="190" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700"
+              fill="#B48FFF">JUNCTIONAL</text>
+            <text x="2" y="202" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700"
+              fill="#B48FFF">EPITHELIUM</text>
+            <text x="2" y="213" font-family="'DM Sans',sans-serif" font-size="8.5" fill="rgba(180,143,255,0.55)">"the
+              open gate"</text>
+
+            <text x="152" y="230" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600">CONNECTIVE</text>
+            <text x="152" y="241" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600">TISSUE</text>
+
+            <text x="36" y="280" font-family="'DM Sans',sans-serif" font-size="9" fill="rgba(248,246,241,0.3)"
+              font-weight="600" transform="rotate(-90,36,280)">GUM TISSUE</text>
+
+            <line x1="268" y1="270" x2="268" y2="310" stroke="#B48FFF" stroke-width="1.5" opacity="0.5"
+              marker-end="url(#arr-pick)" stroke-dasharray="4,3" />
+            <text x="225" y="328" font-family="'DM Sans',sans-serif" font-size="10" font-weight="700" fill="#B48FFF">→
+              BLOODSTREAM</text>
+            <text x="225" y="340" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(248,246,241,0.35)">systemic absorption</text>
+
+            <!-- Step circles -->
+            <circle cx="113" cy="58" r="10" fill="none" stroke="#B48FFF" stroke-width="1.5" opacity="0.6" />
+            <text x="113" y="62" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9" font-weight="700"
+              fill="#B48FFF">1</text>
+            <circle cx="113" cy="128" r="10" fill="none" stroke="#B48FFF" stroke-width="1.5" opacity="0.5" />
+            <text x="113" y="132" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#B48FFF">2</text>
+            <circle cx="200" cy="174" r="10" fill="none" stroke="#B48FFF" stroke-width="1.5" opacity="0.5" />
+            <text x="200" y="178" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#B48FFF">3</text>
+            <circle cx="268" cy="320" r="10" fill="none" stroke="#B48FFF" stroke-width="1.5" opacity="0.5" />
+            <text x="268" y="324" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              font-weight="700" fill="#B48FFF">4</text>
+
+            <line x1="20" y1="358" x2="320" y2="358" stroke="rgba(248,246,241,0.06)" stroke-width="1" />
+            <text x="20" y="372" font-family="'DM Sans',sans-serif" font-size="8" fill="rgba(180,143,255,0.7)">① Strip
+              inserted ② Vitamins release ③ Diffuse thru JE ④ Enter bloodstream</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod-cta" style="background:var(--mid);">
+      <span class="tag tag-pick">ARO-PIK</span>
+      <h2>READY FOR PRECISION<br><span class="c-pick">DELIVERY?</span></h2>
+      <p>ARO Pick takes 30 seconds and delivers vitamins more directly than anything you've tried before.</p>
+      <div class="prod-cta-actions">
+        <button type="button" class="btn-teal" style="background:var(--pick)">Join the Waitlist</button>
+        <button type="button" class="btn-ghost" data-add-product="pick">Add to bag</button>
+        <button type="button" class="btn-ghost" data-page="flow">Next: ARO Flow →</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand"><span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Patents Pending.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot"><span>© 2025 ARO. All rights reserved. Patents Pending.</span><span
+          class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span></div>
+    </footer>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+     ARO FLOW PAGE
+════════════════════════════════════════ -->
+  <div id="page-flow" class="page">
+    <section class="prod-hero" style="background:linear-gradient(135deg,var(--black) 55%,rgba(110,231,122,0.07) 100%);">
+      <div class="prod-hero-text">
+        <span class="tag tag-flow">ARO-FLO</span>
+        <div class="hpcoming" style="display:inline-block;margin-bottom:1rem;">Coming Soon</div>
+        <div class="prod-hero-title">THE VITAMIN<br>SHOT YOU'LL<br>ACTUALLY WANT.</div>
+        <p class="prod-tagline">"Finally — a vitamin you look forward to."</p>
+        <p class="prod-hero-desc">ARO Flow is a complete, drinkable multivitamin shot — formulated to smell amazing,
+          taste great, and give you everything you need in one quick sip. No gagging. No chalk. Just good.</p>
+        <div class="prod-hero-video-slot" aria-hidden="true">
+          <video class="prod-hero-video" id="flow-hero-video" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="videos/aro-flo.mp4" type="video/mp4" />
+          </video>
+          <div class="prod-hero-video-veil" aria-hidden="true"></div>
+        </div>
+        <div class="prod-hero-actions">
+          <button type="button" class="btn-teal" style="background:var(--flow);color:var(--black)">Join the
+            Waitlist</button>
+          <button type="button" class="btn-ghost" data-add-product="flow">Add to bag</button>
+          <button type="button" class="btn-ghost" data-scroll-to="flow-hiw">See What's Coming</button>
+        </div>
+      </div>
+      <div class="prod-hero-img"
+        style="background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(110,231,122,0.1) 0%,transparent 70%);">
+        <div class="illus-wrap">
+          <!-- ARO FLOW ILLUSTRATION - bottle/shot -->
+          <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg"
+            style="width:100%;max-width:380px;max-height:480px;">
+            <defs>
+              <radialGradient id="glow-flow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#6EE77A" stop-opacity="0.2" />
+                <stop offset="100%" stop-color="#6EE77A" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="bottle-body" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1e2a1e" />
+                <stop offset="40%" stop-color="#223022" />
+                <stop offset="100%" stop-color="#1a261a" />
+              </linearGradient>
+              <linearGradient id="liquid-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#6EE77A" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#3CB34A" stop-opacity="0.9" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="210" cy="280" rx="160" ry="160" fill="url(#glow-flow)" />
+            <!-- Bottle shadow -->
+            <ellipse cx="210" cy="460" rx="55" ry="10" fill="rgba(0,0,0,0.4)" />
+            <!-- Bottle body -->
+            <path
+              d="M155 200 Q150 240 148 300 Q148 380 155 420 Q165 445 210 445 Q255 445 265 420 Q272 380 272 300 Q270 240 265 200 Z"
+              fill="url(#bottle-body)" stroke="rgba(110,231,122,0.2)" stroke-width="1.5" />
+            <!-- Liquid fill -->
+            <clipPath id="bottle-clip">
+              <path
+                d="M155 200 Q150 240 148 300 Q148 380 155 420 Q165 445 210 445 Q255 445 265 420 Q272 380 272 300 Q270 240 265 200 Z" />
+            </clipPath>
+            <rect x="148" y="290" width="124" height="160" fill="url(#liquid-g)" clip-path="url(#bottle-clip)"
+              opacity="0.8" />
+            <!-- Liquid surface shimmer -->
+            <ellipse cx="210" cy="292" rx="55" ry="6" fill="#6EE77A" opacity="0.5" />
+            <!-- Bottle shine left -->
+            <path d="M165 220 Q162 300 163 380" stroke="rgba(255,255,255,0.08)" stroke-width="10" fill="none"
+              stroke-linecap="round" />
+            <!-- Bottle label area -->
+            <rect x="163" y="310" width="94" height="80" rx="8" fill="rgba(0,0,0,0.25)" />
+            <text x="210" y="338" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22"
+              fill="#6EE77A" letter-spacing="4">ARO</text>
+            <text x="210" y="354" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(110,231,122,0.6)" letter-spacing="3" font-weight="600">FLOW</text>
+            <text x="210" y="372" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(255,255,255,0.3)">COMPLETE MULTIVITAMIN</text>
+            <text x="210" y="383" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(255,255,255,0.3)">DRINKABLE SHOT</text>
+            <!-- Neck -->
+            <path d="M185 200 L185 165 Q185 148 192 142 L210 138 L228 142 Q235 148 235 165 L235 200" fill="#1a1a1a"
+              stroke="rgba(110,231,122,0.2)" stroke-width="1" />
+            <!-- Cap -->
+            <rect x="194" y="118" width="32" height="24" rx="6" fill="#6EE77A" />
+            <rect x="198" y="122" width="24" height="4" rx="2" fill="rgba(0,0,0,0.2)" />
+            <!-- Bubbles in liquid -->
+            <circle cx="185" cy="360" r="4" fill="rgba(110,231,122,0.25)" stroke="rgba(110,231,122,0.4)"
+              stroke-width="1" />
+            <circle cx="220" cy="380" r="3" fill="rgba(110,231,122,0.2)" stroke="rgba(110,231,122,0.35)"
+              stroke-width="1" />
+            <circle cx="200" cy="400" r="4.5" fill="rgba(110,231,122,0.25)" stroke="rgba(110,231,122,0.4)"
+              stroke-width="1" />
+            <circle cx="235" cy="360" r="3" fill="rgba(110,231,122,0.2)" stroke="rgba(110,231,122,0.35)"
+              stroke-width="1" />
+            <!-- Callouts -->
+            <line x1="272" y1="340" x2="318" y2="320" stroke="rgba(110,231,122,0.3)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <text x="322" y="316" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(110,231,122,0.7)"
+              font-weight="600">COMPLETE</text>
+            <text x="322" y="328" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(110,231,122,0.7)"
+              font-weight="600">MULTIVITAMIN</text>
+            <line x1="148" y1="295" x2="100" y2="275" stroke="rgba(110,231,122,0.3)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <text x="50" y="268" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              fill="rgba(110,231,122,0.7)" font-weight="600">GREAT TASTE</text>
+            <text x="50" y="280" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(248,246,241,0.3)">& pleasant aroma</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="hiw-section" id="flow-hiw">
+      <span class="sec-label">How It Works</span>
+      <h2 class="sec-h2 c-flow">OPEN. DRINK.<br>DONE.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step reveal">
+          <div class="hiw-n">01</div>
+          <div class="hiw-icon" style="background:rgba(110,231,122,0.12);">💧</div>
+          <div class="hiw-t">CRACK THE CAP</div>
+          <p class="hiw-b">Pop open your ARO Flow shot — and actually enjoy the experience. It smells like something you
+            want to drink, not a medicine cabinet.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">02</div>
+          <div class="hiw-icon" style="background:rgba(110,231,122,0.12);">😋</div>
+          <div class="hiw-t">DRINK AND ENJOY</div>
+          <p class="hiw-b">Take it straight or mix with water. ARO Flow is formulated to be genuinely pleasant — great
+            flavor, smooth consistency, no vitamin aftertaste. Because taking your vitamins should feel good.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">03</div>
+          <div class="hiw-icon" style="background:rgba(110,231,122,0.12);">✅</div>
+          <div class="hiw-t">COMPLETE COVERAGE</div>
+          <p class="hiw-b">ARO Flow is a complete solution — meaning one shot covers your daily vitamin needs. No
+            stacking multiple bottles, no figuring out what to pair with what. Simple.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vid-section">
+      <span class="sec-label">Coming Soon</span>
+      <h2 class="sec-h2" style="margin-bottom:.5rem;">WATCH ARO<br>FLOW IN ACTION.</h2>
+      <div class="vid-wrap">
+        <div class="vid-bg-text" style="color:rgba(110,231,122,0.04)">FLOW</div>
+        <div class="vid-center">
+          <div class="vid-play" style="border-color:rgba(110,231,122,0.4)">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <polygon points="10,6 24,14 10,22" fill="rgba(110,231,122,0.8)" />
+            </svg>
+          </div>
+          <div class="vid-label" style="color:rgba(110,231,122,0.5);">ARO Flow — Product Video</div>
+          <div class="vid-note">Video coming soon — placeholder for product explainer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <span class="sec-label">Why ARO Flow</span>
+      <h2 class="sec-h2">THE BENEFITS.</h2>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">😍</div>
+          <div class="ben-t">ACTUALLY TASTES GOOD</div>
+          <p class="ben-b">ARO Flow is formulated from the ground up to be something you enjoy drinking — pleasant
+            smell, great flavor, no vitamin aftertaste. Because if it's not enjoyable, you won't take it.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">🎯</div>
+          <div class="ben-t">COMPLETE IN ONE SHOT</div>
+          <p class="ben-b">Everything you need — one bottle. ARO Flow is engineered as a complete daily solution. No
+            regimen planning, no guesswork about what to stack.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">⚡</div>
+          <div class="ben-t">LIQUID = FASTER</div>
+          <p class="ben-b">Liquids are absorbed faster than pills and capsules. ARO Flow is ready for your body to use
+            from the moment it hits your gut — no waiting for capsules to dissolve.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">📦</div>
+          <div class="ben-t">GRAB AND GO</div>
+          <p class="ben-b">Single-serve shots are portable and perfectly dosed. Toss one in your gym bag, keep them in
+            your fridge, take them anywhere. No measuring, no mess.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">🔄</div>
+          <div class="ben-t">WORKS WITH THE SYSTEM</div>
+          <p class="ben-b">ARO Flow is the oral supplement layer of the ARO system. Pair it with ARO Floss or ARO Pick
+            for a comprehensive delivery approach — gingival and digestive.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(110,231,122,0.12);">🚀</div>
+          <div class="ben-t">COMING SOON</div>
+          <p class="ben-b">ARO Flow is in development. Join the waitlist and be the first to try it — early access
+            subscribers get exclusive founding pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod-cta" style="background:var(--mid);">
+      <span class="tag tag-flow">ARO-FLO — Coming Soon</span>
+      <h2>BE THE FIRST TO<br><span class="c-flow">TRY ARO FLOW.</span></h2>
+      <p>Join the waitlist for early access, founding pricing, and updates on our launch.</p>
+      <div class="prod-cta-actions">
+        <button type="button" class="btn-teal" style="background:var(--flow);color:var(--black)">Join the
+          Waitlist</button>
+        <button type="button" class="btn-ghost" data-add-product="flow">Add to bag</button>
+        <button type="button" class="btn-ghost" data-page="ez">Next: ARO-EZ →</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand"><span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Patents Pending.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot"><span>© 2025 ARO. All rights reserved. Patents Pending.</span><span
+          class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span></div>
+    </footer>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+     ARO-EZ PAGE
+════════════════════════════════════════ -->
+  <div id="page-ez" class="page">
+    <section class="prod-hero" style="background:linear-gradient(135deg,var(--black) 55%,rgba(255,184,48,0.07) 100%);">
+      <div class="prod-hero-text">
+        <span class="tag tag-ez">ARO-EZ</span>
+        <div class="hpcoming" style="display:inline-block;margin-bottom:1rem;">Coming Soon</div>
+        <div class="prod-hero-title">PILLS THAT<br>DON'T FEEL<br>LIKE PILLS.</div>
+        <p class="prod-tagline">"Small. Smooth. Surprisingly pleasant."</p>
+        <p class="prod-hero-desc">ARO-EZ is our reinvention of the pill. Smaller, coated to go down easy, and formulated
+          to smell and taste good — because the biggest barrier to supplementing consistently is the supplement itself.
+        </p>
+        <div class="prod-hero-video-slot" aria-hidden="true">
+          <video class="prod-hero-video" id="ez-hero-video" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="videos/aro-ez.mp4" type="video/mp4" />
+          </video>
+          <div class="prod-hero-video-veil" aria-hidden="true"></div>
+        </div>
+        <div class="prod-hero-actions">
+          <button type="button" class="btn-teal" style="background:var(--ez);color:var(--black)">Join the
+            Waitlist</button>
+          <button type="button" class="btn-ghost" data-add-product="ez">Add to bag</button>
+          <button type="button" class="btn-ghost" data-scroll-to="ez-hiw">See
+            What's Coming</button>
+        </div>
+      </div>
+      <div class="prod-hero-img"
+        style="background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(255,184,48,0.1) 0%,transparent 70%);">
+        <div class="illus-wrap">
+          <!-- ARO-EZ ILLUSTRATION - pill bottle + pills -->
+          <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg"
+            style="width:100%;max-width:380px;max-height:480px;">
+            <defs>
+              <radialGradient id="glow-ez" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFB830" stop-opacity="0.2" />
+                <stop offset="100%" stop-color="#FFB830" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="ez-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#201c10" />
+                <stop offset="50%" stop-color="#2a2415" />
+                <stop offset="100%" stop-color="#1c1810" />
+              </linearGradient>
+              <linearGradient id="pill-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFD060" />
+                <stop offset="100%" stop-color="#FFB830" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="210" cy="280" rx="160" ry="160" fill="url(#glow-ez)" />
+            <!-- Bottle shadow -->
+            <ellipse cx="210" cy="455" rx="58" ry="10" fill="rgba(0,0,0,0.4)" />
+            <!-- Bottle body -->
+            <path
+              d="M162 195 Q158 240 156 300 Q155 380 162 420 Q172 445 210 445 Q248 445 258 420 Q265 380 264 300 Q262 240 258 195 Z"
+              fill="url(#ez-bottle)" stroke="rgba(255,184,48,0.2)" stroke-width="1.5" />
+            <!-- Label -->
+            <rect x="170" y="290" width="80" height="100" rx="8" fill="rgba(0,0,0,0.3)" />
+            <text x="210" y="318" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22"
+              fill="#FFB830" letter-spacing="3">ARO</text>
+            <text x="210" y="334" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              fill="rgba(255,184,48,0.6)" letter-spacing="4" font-weight="600">EZ</text>
+            <text x="210" y="353" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="8.5"
+              fill="rgba(255,255,255,0.3)">SMARTER PILLS</text>
+            <text x="210" y="364" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="8.5"
+              fill="rgba(255,255,255,0.3)">60 COUNT</text>
+            <!-- Bottle shine -->
+            <path d="M173 215 Q170 300 171 390" stroke="rgba(255,255,255,0.06)" stroke-width="10" fill="none"
+              stroke-linecap="round" />
+            <!-- Neck -->
+            <path d="M185 195 L185 165 Q186 150 210 146 Q234 150 235 165 L235 195" fill="#181408"
+              stroke="rgba(255,184,48,0.15)" stroke-width="1" />
+            <!-- Cap (open, slightly tilted) -->
+            <g transform="translate(210,130) rotate(-15)">
+              <rect x="-20" y="-14" width="40" height="24" rx="7" fill="#FFB830" />
+              <rect x="-15" y="-9" width="30" height="4" rx="2" fill="rgba(0,0,0,0.15)" />
+            </g>
+            <!-- Scattered pills coming out -->
+            <!-- Pill 1 (capsule shape, large) -->
+            <g transform="translate(280,170) rotate(25)">
+              <rect x="-18" y="-9" width="36" height="18" rx="9" fill="url(#pill-g)" stroke="rgba(255,184,48,0.4)"
+                stroke-width="1" />
+              <line x1="0" y1="-9" x2="0" y2="9" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" />
+            </g>
+            <!-- Pill 2 -->
+            <g transform="translate(300,220) rotate(-10)">
+              <rect x="-16" y="-8" width="32" height="16" rx="8" fill="url(#pill-g)" stroke="rgba(255,184,48,0.4)"
+                stroke-width="1" />
+              <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" />
+            </g>
+            <!-- Pill 3 - smaller -->
+            <g transform="translate(120,165) rotate(35)">
+              <rect x="-14" y="-7" width="28" height="14" rx="7" fill="url(#pill-g)" stroke="rgba(255,184,48,0.4)"
+                stroke-width="1" />
+              <line x1="0" y1="-7" x2="0" y2="7" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" />
+            </g>
+            <!-- Pill 4 -->
+            <g transform="translate(100,220) rotate(-20)">
+              <rect x="-13" y="-6.5" width="26" height="13" rx="6.5" fill="url(#pill-g)" stroke="rgba(255,184,48,0.35)"
+                stroke-width="1" />
+              <line x1="0" y1="-6.5" x2="0" y2="6.5" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" />
+            </g>
+            <!-- Pill 5 (smallest — shows miniaturized) -->
+            <g transform="translate(260,155) rotate(50)">
+              <rect x="-11" y="-5.5" width="22" height="11" rx="5.5" fill="url(#pill-g)" opacity="0.75"
+                stroke="rgba(255,184,48,0.3)" stroke-width="1" />
+            </g>
+            <!-- Size comparison note -->
+            <text x="295" y="255" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(255,184,48,0.6)"
+              font-weight="600">MINI-SIZED</text>
+            <text x="295" y="267" font-family="'DM Sans',sans-serif" font-size="10" fill="rgba(248,246,241,0.3)">easy to
+              swallow</text>
+            <line x1="280" y1="220" x2="290" y2="248" stroke="rgba(255,184,48,0.25)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <!-- EZ coating callout -->
+            <line x1="120" y1="165" x2="72" y2="148" stroke="rgba(255,184,48,0.25)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <text x="64" y="140" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              fill="rgba(255,184,48,0.7)" font-weight="600">EZ-GLIDE</text>
+            <text x="64" y="152" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(248,246,241,0.3)">smooth coating</text>
+            <!-- Bottom label -->
+            <text x="210" y="490" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="12"
+              fill="rgba(248,246,241,0.25)" letter-spacing="2">PLEASANT SMELL & TASTE</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="hiw-section" id="ez-hiw">
+      <span class="sec-label">How It Works</span>
+      <h2 class="sec-h2 c-ez">SMALLER.<br>SMOOTHER.<br>SMARTER.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step reveal">
+          <div class="hiw-n">01</div>
+          <div class="hiw-icon" style="background:rgba(255,184,48,0.12);">💊</div>
+          <div class="hiw-t">MINI-TAB FORMAT</div>
+          <p class="hiw-b">ARO-EZ pills are engineered to be significantly smaller than standard supplements —
+            eliminating the gag-reflex problem and making it easy to take multiple at once if needed.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">02</div>
+          <div class="hiw-icon" style="background:rgba(255,184,48,0.12);">✨</div>
+          <div class="hiw-t">EZ-GLIDE COATING</div>
+          <p class="hiw-b">A smooth hydrophilic outer coating helps ARO-EZ pills glide down easily with minimal water —
+            no sticking to the throat, no unpleasant texture. The coating also masks any bitter pharmaceutical taste.
+          </p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">03</div>
+          <div class="hiw-icon" style="background:rgba(255,184,48,0.12);">🕐</div>
+          <div class="hiw-t">TIMED RELEASE</div>
+          <p class="hiw-b">ARO-EZ uses a smart matrix designed for optimal release — nutrients become available when
+            your body is ready to absorb them, not all at once. Better timing means better results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vid-section">
+      <span class="sec-label">Coming Soon</span>
+      <h2 class="sec-h2" style="margin-bottom:.5rem;">WATCH ARO-EZ<br>IN ACTION.</h2>
+      <div class="vid-wrap">
+        <div class="vid-bg-text" style="color:rgba(255,184,48,0.04)">EZ</div>
+        <div class="vid-center">
+          <div class="vid-play" style="border-color:rgba(255,184,48,0.4)">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <polygon points="10,6 24,14 10,22" fill="rgba(255,184,48,0.8)" />
+            </svg>
+          </div>
+          <div class="vid-label" style="color:rgba(255,184,48,0.5);">ARO-EZ — Product Video</div>
+          <div class="vid-note">Video coming soon — placeholder for product explainer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <span class="sec-label">Why ARO-EZ</span>
+      <h2 class="sec-h2">THE BENEFITS.</h2>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">😌</div>
+          <div class="ben-t">NO MORE GAGGING</div>
+          <p class="ben-b">Large pills with rough coatings are the #1 reason people stop taking supplements. ARO-EZ is
+            engineered specifically to eliminate that problem — small size, smooth glide, gone.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">👃</div>
+          <div class="ben-t">SMELLS GOOD</div>
+          <p class="ben-b">Most pills smell awful — a combination of the active ingredients and filler binders. ARO-EZ
+            addresses this at the formulation level, so opening the bottle isn't an assault on your senses.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">😋</div>
+          <div class="ben-t">TASTES BETTER</div>
+          <p class="ben-b">The EZ-glide coating masks the bitter flavor of most active ingredients. If you've ever had a
+            pill dissolve on your tongue mid-swallow, you know why this matters.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">⏱</div>
+          <div class="ben-t">SMART TIMING</div>
+          <p class="ben-b">ARO-EZ's timed-release matrix means you're not flooding your system with everything at once.
+            Nutrients are released over time — the way your body was designed to receive them.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">🔄</div>
+          <div class="ben-t">BUILT FOR CONSISTENCY</div>
+          <p class="ben-b">The best supplement is the one you actually take. ARO-EZ removes every friction point that
+            causes people to skip their daily stack — making consistency effortless.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,184,48,0.12);">🚀</div>
+          <div class="ben-t">IN DEVELOPMENT</div>
+          <p class="ben-b">ARO-EZ is being designed with the same precision as our gingival delivery products. Join the
+            waitlist to be first in line and help shape what we build.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod-cta" style="background:var(--mid);">
+      <span class="tag tag-ez">ARO-EZ — Coming Soon</span>
+      <h2>PILLS THAT ACTUALLY<br><span class="c-ez">FEEL EASY.</span></h2>
+      <p>Join the waitlist and be among the first to experience supplementation done right.</p>
+      <div class="prod-cta-actions">
+        <button type="button" class="btn-teal" style="background:var(--ez);color:var(--black)">Join the
+          Waitlist</button>
+        <button type="button" class="btn-ghost" data-add-product="ez">Add to bag</button>
+        <button type="button" class="btn-ghost" data-page="home">← Back to ARO Home</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand"><span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Patents Pending.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot"><span>© 2025 ARO. All rights reserved. Patents Pending.</span><span
+          class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span></div>
+    </footer>
+  </div>
+
+
+  <!-- ════════════════════════════════════════
+     ARO-FUEL PAGE
+════════════════════════════════════════ -->
+  <div id="page-fuel" class="page">
+    <section class="prod-hero" style="background:linear-gradient(135deg,var(--black) 55%,rgba(255,90,77,0.07) 100%);">
+      <div class="prod-hero-text">
+        <span class="tag tag-fuel">ARO-FUEL</span>
+        <div class="hpcoming" style="display:inline-block;margin-bottom:1rem;">Coming Soon</div>
+        <div class="prod-hero-title">PROTEIN<br>MEETS YOUR<br>MULTIVITAMIN.</div>
+        <p class="prod-tagline">"Build muscle. Feed your body. One scoop."</p>
+        <p class="prod-hero-desc">ARO Fuel is a clean, high-quality protein blend fused with a complete daily vitamin
+          matrix. Every scoop delivers the amino acids you need to build and recover — alongside the micronutrients your
+          body actually absorbs. No more stacking a protein shake with five other pills.</p>
+        <div class="prod-hero-video-slot" aria-hidden="true">
+          <video class="prod-hero-video" id="fuel-hero-video" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="videos/aro-fuel.mp4" type="video/mp4" />
+          </video>
+          <div class="prod-hero-video-veil" aria-hidden="true"></div>
+        </div>
+        <div class="prod-hero-actions">
+          <button type="button" class="btn-teal" style="background:var(--fuel);color:var(--black)">Join the
+            Waitlist</button>
+          <button type="button" class="btn-ghost" data-add-product="fuel">Add to bag</button>
+          <button type="button" class="btn-ghost" data-scroll-to="fuel-hiw">See What's Coming</button>
+        </div>
+      </div>
+      <div class="prod-hero-img"
+        style="background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(255,90,77,0.1) 0%,transparent 70%);">
+        <div class="illus-wrap">
+          <!-- ARO FUEL ILLUSTRATION - protein tub -->
+          <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg"
+            style="width:100%;max-width:380px;max-height:480px;">
+            <defs>
+              <radialGradient id="glow-fuel" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FF5A4D" stop-opacity="0.22" />
+                <stop offset="100%" stop-color="#FF5A4D" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="tub-body" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2a1a18" />
+                <stop offset="45%" stop-color="#30201e" />
+                <stop offset="100%" stop-color="#231614" />
+              </linearGradient>
+              <linearGradient id="powder-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FF8A7D" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#C63A30" stop-opacity="0.9" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="210" cy="280" rx="170" ry="170" fill="url(#glow-fuel)" />
+            <!-- Tub shadow -->
+            <ellipse cx="210" cy="470" rx="100" ry="12" fill="rgba(0,0,0,0.45)" />
+            <!-- Tub body -->
+            <path d="M120 185 Q115 210 115 250 L115 430 Q115 455 145 460 L275 460 Q305 455 305 430 L305 250 Q305 210 300 185 Z"
+              fill="url(#tub-body)" stroke="rgba(255,90,77,0.25)" stroke-width="1.5" />
+            <!-- Label area -->
+            <rect x="130" y="240" width="160" height="180" rx="10" fill="rgba(0,0,0,0.35)"
+              stroke="rgba(255,90,77,0.18)" stroke-width="1" />
+            <text x="210" y="280" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="30"
+              fill="#FF5A4D" letter-spacing="5">ARO</text>
+            <text x="210" y="305" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="22"
+              fill="rgba(255,138,125,0.85)" letter-spacing="6">FUEL</text>
+            <line x1="155" y1="320" x2="265" y2="320" stroke="rgba(255,90,77,0.35)" stroke-width="1" />
+            <text x="210" y="340" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(255,255,255,0.55)" letter-spacing="3" font-weight="600">PROTEIN + DAILY VITAMINS</text>
+            <text x="210" y="360" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="9"
+              fill="rgba(255,255,255,0.35)" letter-spacing="2">COMPLETE RECOVERY BLEND</text>
+            <!-- macro chips -->
+            <rect x="145" y="378" width="60" height="22" rx="11" fill="rgba(255,90,77,0.18)"
+              stroke="rgba(255,90,77,0.4)" stroke-width="1" />
+            <text x="175" y="393" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="#FF8A7D" font-weight="700">25G PROTEIN</text>
+            <rect x="215" y="378" width="60" height="22" rx="11" fill="rgba(255,90,77,0.1)"
+              stroke="rgba(255,90,77,0.3)" stroke-width="1" />
+            <text x="245" y="393" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(255,138,125,0.9)" font-weight="700">100% DV</text>
+            <!-- Lid -->
+            <rect x="110" y="150" width="200" height="40" rx="10" fill="#FF5A4D" />
+            <rect x="115" y="155" width="190" height="6" rx="3" fill="rgba(0,0,0,0.2)" />
+            <rect x="115" y="178" width="190" height="4" rx="2" fill="rgba(0,0,0,0.25)" />
+            <!-- Scoop peeking out -->
+            <g transform="translate(320,340) rotate(18)">
+              <ellipse cx="0" cy="0" rx="42" ry="18" fill="#1a1a1a" stroke="rgba(255,90,77,0.35)" stroke-width="1" />
+              <ellipse cx="0" cy="-3" rx="36" ry="12" fill="url(#powder-g)" opacity="0.85" />
+              <rect x="-4" y="-38" width="8" height="40" rx="4" fill="#FF5A4D" />
+            </g>
+            <!-- Powder dust -->
+            <circle cx="335" cy="318" r="2" fill="rgba(255,138,125,0.6)" />
+            <circle cx="352" cy="330" r="1.5" fill="rgba(255,138,125,0.5)" />
+            <circle cx="345" cy="355" r="2.2" fill="rgba(255,138,125,0.55)" />
+            <!-- Callouts -->
+            <line x1="115" y1="270" x2="70" y2="255" stroke="rgba(255,90,77,0.35)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <text x="50" y="248" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="11"
+              fill="rgba(255,138,125,0.8)" font-weight="600">CLEAN PROTEIN</text>
+            <text x="50" y="260" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="10"
+              fill="rgba(248,246,241,0.35)">whey + plant blend</text>
+            <line x1="305" y1="270" x2="360" y2="250" stroke="rgba(255,90,77,0.35)" stroke-width="1"
+              stroke-dasharray="3,3" />
+            <text x="370" y="246" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(255,138,125,0.8)"
+              font-weight="600">VITAMIN</text>
+            <text x="370" y="258" font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(255,138,125,0.8)"
+              font-weight="600">MATRIX</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS - FUEL -->
+    <section class="hiw-section" id="fuel-hiw">
+      <span class="sec-label">How It Works</span>
+      <h2 class="sec-h2 c-fuel">SCOOP. SHAKE.<br>FUEL UP.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step reveal">
+          <div class="hiw-n">01</div>
+          <div class="hiw-icon" style="background:rgba(255,90,77,0.12);">🥄</div>
+          <div class="hiw-t">ONE SCOOP, ONE STEP</div>
+          <p class="hiw-b">Add a single scoop of ARO Fuel to water, milk, or your favorite blend. No separate vitamins
+            to remember, no pill ritual — one scoop replaces your morning stack.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">02</div>
+          <div class="hiw-icon" style="background:rgba(255,90,77,0.12);">💪</div>
+          <div class="hiw-t">PROTEIN + VITAMINS, FUSED</div>
+          <p class="hiw-b">25g of clean protein blended with a full daily vitamin matrix, formulated together so the
+            micronutrients ride along with the amino acids — absorbed while your body is already in uptake mode.</p>
+        </div>
+        <div class="hiw-step reveal">
+          <div class="hiw-n">03</div>
+          <div class="hiw-icon" style="background:rgba(255,90,77,0.12);">⚡</div>
+          <div class="hiw-t">RECOVER + SUPPLEMENT</div>
+          <p class="hiw-b">Post-workout, morning routine, or meal replacement — ARO Fuel covers recovery and daily
+            supplementation in one move. Less clutter. More results you can feel.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vid-section">
+      <span class="sec-label">Coming Soon</span>
+      <h2 class="sec-h2" style="margin-bottom:.5rem;">WATCH ARO<br>FUEL IN ACTION.</h2>
+      <div class="vid-wrap">
+        <div class="vid-bg-text" style="color:rgba(255,90,77,0.04)">FUEL</div>
+        <div class="vid-center">
+          <div class="vid-play" style="border-color:rgba(255,90,77,0.4)">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <polygon points="10,6 24,14 10,22" fill="rgba(255,90,77,0.8)" />
+            </svg>
+          </div>
+          <div class="vid-label" style="color:rgba(255,90,77,0.5);">ARO Fuel — Product Video</div>
+          <div class="vid-note">Video coming soon — placeholder for product explainer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <span class="sec-label">Why ARO Fuel</span>
+      <h2 class="sec-h2">THE BENEFITS.</h2>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">💪</div>
+          <div class="ben-t">CLEAN, COMPLETE PROTEIN</div>
+          <p class="ben-b">A smooth whey + plant blend engineered for a full amino acid profile — no fillers, no weird
+            aftertaste. Built for real recovery and real results.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">🧬</div>
+          <div class="ben-t">FULL VITAMIN MATRIX</div>
+          <p class="ben-b">100% of your daily vitamin needs baked into every scoop. Skip the separate multivitamin —
+            ARO Fuel delivers the micronutrients where your body is already ready to use them.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">🎯</div>
+          <div class="ben-t">ONE SCOOP, ZERO STACKING</div>
+          <p class="ben-b">Stop managing a protein tub, a multivitamin, and a handful of extras. ARO Fuel collapses
+            your whole morning stack into a single, thoughtful formula.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">😋</div>
+          <div class="ben-t">ACTUALLY ENJOYABLE</div>
+          <p class="ben-b">Rich, smooth, and properly flavored — no chalky texture, no medicine aftertaste. Something
+            you genuinely look forward to drinking.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">🔄</div>
+          <div class="ben-t">WORKS WITH THE SYSTEM</div>
+          <p class="ben-b">ARO Fuel is the fuel layer of the ARO system. Pair it with ARO Floss or ARO Pick for a
+            comprehensive delivery approach — gingival, digestive, and muscular.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon" style="background:rgba(255,90,77,0.12);">🚀</div>
+          <div class="ben-t">COMING SOON</div>
+          <p class="ben-b">ARO Fuel is in development. Join the waitlist and be the first to try it — founding
+            subscribers get early access and exclusive launch pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prod-cta" style="background:var(--mid);">
+      <span class="tag tag-fuel">ARO-FUEL — Coming Soon</span>
+      <h2>BE THE FIRST TO<br><span class="c-fuel">TRY ARO FUEL.</span></h2>
+      <p>Join the waitlist for early access, founding pricing, and updates on our launch.</p>
+      <div class="prod-cta-actions">
+        <button type="button" class="btn-teal" style="background:var(--fuel);color:var(--black)">Join the
+          Waitlist</button>
+        <button type="button" class="btn-ghost" data-add-product="fuel">Add to bag</button>
+        <button type="button" class="btn-ghost" data-page="floss">Back to ARO Floss →</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="fbrand"><span class="flogo">ARO</span>
+          <p>The smarter way to take your vitamins. Patents Pending.</p>
+        </div>
+        <div class="fcol">
+          <h4>Products</h4>
+          <ul>
+            <li><a data-page="floss">ARO Floss</a></li>
+            <li><a data-page="pick">ARO Pick</a></li>
+            <li><a data-page="flow">ARO Flow</a></li>
+            <li><a data-page="ez">ARO-EZ</a></li>
+            <li><a data-page="fuel">ARO Fuel</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4>
+          <ul>
+            <li><a>About</a></li>
+            <li><a>Science</a></li>
+            <li><a>Patents</a></li>
+            <li><a>Press</a></li>
+          </ul>
+        </div>
+        <div class="fcol">
+          <h4>Support</h4>
+          <ul>
+            <li><a>FAQ</a></li>
+            <li><a>Contact</a></li>
+            <li><a>Privacy</a></li>
+            <li><a>Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot"><span>© 2025 ARO. All rights reserved. Patents Pending.</span><span
+          class="footer-slogan">THE SMARTER WAY TO TAKE YOUR VITAMINS.</span></div>
+    </footer>
+  </div>
+
+  <div id="catalog-root" class="catalog-root" aria-hidden="true">
+    <div class="catalog-backdrop" data-catalog-close aria-hidden="true"></div>
+    <div class="catalog-modal" role="dialog" aria-modal="true" aria-labelledby="catalog-title">
+      <header class="catalog-head">
+        <div>
+          <span class="catalog-eyebrow">Shop the ARO system</span>
+          <h2 id="catalog-title" class="catalog-title">Pick a product</h2>
+        </div>
+        <button type="button" class="shop-close" id="catalog-close" aria-label="Close catalog">×</button>
+      </header>
+      <div class="catalog-grid" id="catalog-grid"></div>
+      <footer class="catalog-foot">
+        <p class="shop-disclaimer">Demo storefront — prices are placeholders until launch.</p>
+        <button type="button" class="btn-ghost" data-cart-open>View bag</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="shop-root" class="shop-root" aria-hidden="true">
+    <div class="shop-backdrop" id="shop-overlay-hit" data-shop-close tabindex="-1" aria-hidden="true"></div>
+    <aside id="shop-sheet" class="shop-sheet" role="dialog" aria-modal="true" aria-labelledby="shop-bag-title">
+      <div id="shop-success" class="shop-success is-hidden" role="status" aria-live="polite">
+        <strong>Order received (demo)</strong>
+        <p>Thanks — we will follow up at <span data-shop-success-email></span>. No payment has been processed. This checkout is a preview only.</p>
+      </div>
+      <header class="shop-head">
+        <h2 id="shop-bag-title" class="shop-title">Your bag</h2>
+        <button type="button" class="shop-close" id="shop-close" aria-label="Close shopping bag">×</button>
+      </header>
+      <div id="shop-view-bag" class="shop-view">
+        <div id="shop-lines" class="shop-lines"></div>
+        <div class="shop-foot">
+          <div class="shop-sub-row">
+            <span>Subtotal</span>
+            <strong id="shop-subtotal">$0.00</strong>
+          </div>
+          <p class="shop-disclaimer">Prices are placeholders until launch. Connect Stripe, Shopify, or another provider here when you are ready.</p>
+          <button type="button" class="btn-teal shop-co-go" id="shop-checkout-btn" disabled>Checkout</button>
+        </div>
+      </div>
+      <div id="shop-view-checkout" class="shop-view is-hidden">
+        <form class="shop-co-form" id="shop-co-form" novalidate>
+          <label class="shop-label">Email
+            <input type="email" id="shop-co-email" name="email" required autocomplete="email" class="shop-input" placeholder="you@example.com" />
+          </label>
+          <label class="shop-label">Full name
+            <input type="text" id="shop-co-name" name="name" autocomplete="name" class="shop-input" placeholder="Optional" />
+          </label>
+          <div class="shop-sub-row">
+            <span>Total</span>
+            <strong id="shop-co-total">$0.00</strong>
+          </div>
+          <p class="shop-disclaimer">Demo only — no card is charged.</p>
+          <div class="shop-co-actions">
+            <button type="button" class="btn-ghost" id="shop-back-bag">Back</button>
+            <button type="button" class="btn-teal" id="shop-place-order">Place order</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/shop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+---
+description: All user-facing content in this project must be written in English.
+alwaysApply: true
+---
+
+# English-Only Content Rule
+
+All text that the end user can see in the ARO website must be written in **English**.
+This applies to every page, section, component, marketing copy, microcopy, CTAs,
+tooltips, labels, alt text, metadata (title, meta description, Open Graph),
+error messages, footer links, and any new feature added in the future.
+
+## Scope
+
+- `index.html` (all pages: `#page-home`, `#page-floss`, `#page-pick`, `#page-flow`,
+  `#page-ez`, `#page-fuel`, and any future page).
+- Any new HTML file, template, or component added to the project.
+- SVG illustrations with inline `<text>` elements.
+- `alt`, `aria-label`, `title`, `placeholder` attributes.
+
+## Rules
+
+- Never introduce Spanish (or any non-English) copy into user-visible text.
+- Product names stay in their canonical form: `ARO-FLOSS`, `ARO-PIK`, `ARO-FLO`,
+  `ARO-EZ`, `ARO-FUEL`.
+- If the user requests a change in Spanish, translate the intent and implement
+  the final copy in English.
+- Code comments and commit messages may be in any language; only user-facing
+  content is restricted.
+
+## Examples
+
+```html
+<!-- BAD -->
+<h2>NUESTROS PRODUCTOS</h2>
+<p>La forma más inteligente de tomar tus vitaminas.</p>
+<button>Comprar ahora</button>
+
+<!-- GOOD -->
+<h2>OUR PRODUCTS</h2>
+<p>The smarter way to take your vitamins.</p>
+<button>Shop Now</button>
+```
+
+```html
+<!-- BAD -->
+<img src="aro_floss.png" alt="Hilo dental con vitaminas" />
+
+<!-- GOOD -->
+<img src="aro_floss.png" alt="Vitamin-coated floss pick" />
+```
