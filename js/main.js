@@ -93,6 +93,10 @@ function setNavOpen(open) {
   document.body.classList.toggle('has-nav-open', open);
 }
 
+window.ARO_closeMobileNav = function () {
+  setNavOpen(false);
+};
+
 document.body.addEventListener('click', (e) => {
   if (e.target.closest('#nav-burger')) {
     const links = document.getElementById('nav-links');

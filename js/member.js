@@ -4,6 +4,10 @@
   var googleButtonsInitialized = false;
   var googleGsiAppInitialized = false;
 
+  function closeMobileNav() {
+    if (typeof window.ARO_closeMobileNav === 'function') window.ARO_closeMobileNav();
+  }
+
   function getGoogleClientId() {
     if (typeof window.ARO_GOOGLE_CLIENT_ID === 'string' && window.ARO_GOOGLE_CLIENT_ID.trim()) {
       return window.ARO_GOOGLE_CLIENT_ID.trim();
@@ -262,6 +266,7 @@
   }
 
   function openMember() {
+    closeMobileNav();
     closeCatalogIfOpen();
     closeBagIfOpen();
     var root = document.getElementById('member-root');

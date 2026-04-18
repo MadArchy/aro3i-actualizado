@@ -1,6 +1,11 @@
 (function () {
   var successTimer;
   var STORAGE_KEY = 'aro_cart_v1';
+
+  function closeMobileNav() {
+    if (typeof window.ARO_closeMobileNav === 'function') window.ARO_closeMobileNav();
+  }
+
   var CATALOG = {
     floss: {
       name: 'ARO-FLOSS',
@@ -110,6 +115,7 @@
 
   function openWaitlist(productId) {
     if (!CATALOG[productId]) return;
+    closeMobileNav();
     waitlistProductId = productId;
     var p = CATALOG[productId];
     var root = document.getElementById('waitlist-root');
@@ -333,6 +339,7 @@
   }
 
   function openCatalog() {
+    closeMobileNav();
     var root = document.getElementById('catalog-root');
     if (!root) return;
     renderCatalog();
@@ -433,6 +440,7 @@
   }
 
   function openBag() {
+    closeMobileNav();
     var root = document.getElementById('shop-root');
     if (!root) return;
     root.classList.add('is-open');

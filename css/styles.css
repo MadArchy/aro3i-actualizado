@@ -1891,6 +1891,16 @@ body.has-nav-open {
   overflow: hidden;
 }
 
+/* Overlays above mobile nav drawer (nav / dropdown z-index ≤ 320) */
+@media (max-width: 960px) {
+  .catalog-root,
+  .shop-root,
+  .waitlist-root,
+  .member-root {
+    z-index: 600;
+  }
+}
+
 @media (max-width: 960px) {
   nav {
     padding: 1rem 1.25rem;
@@ -1972,6 +1982,25 @@ body.has-nav-open {
   .nav-cta {
     text-align: center;
     padding: 0.85rem 1.2rem !important;
+  }
+
+  .catalog-modal,
+  .member-modal,
+  .waitlist-modal {
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem);
+  }
+
+  .catalog-grid {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  .member-body,
+  .waitlist-body {
+    padding-bottom: max(1.5rem, calc(1rem + env(safe-area-inset-bottom)));
+  }
+
+  .shop-sheet {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
