@@ -44,6 +44,180 @@
     },
   };
   var CATALOG_ORDER = ['floss', 'pick', 'flow', 'ez', 'fuel'];
+  var WAITLIST_STORAGE_KEY = 'aro_waitlist_signups_v1';
+  var MEMBER_SESSION_KEY = 'aro_member_session_v1';
+  var MEMBER_ACCOUNTS_KEY = 'aro_member_accounts_v1';
+
+  function getMemberSessionEmail() {
+    try {
+      var raw = localStorage.getItem(MEMBER_SESSION_KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      return o && o.email ? String(o.email).trim() : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function getMemberAccount() {
+    var email = getMemberSessionEmail();
+    if (!email) return null;
+    try {
+      var accounts = JSON.parse(localStorage.getItem(MEMBER_ACCOUNTS_KEY) || '[]');
+      if (!Array.isArray(accounts)) return null;
+      var lower = email.toLowerCase();
+      for (var i = 0; i < accounts.length; i++) {
+        if (accounts[i].email && accounts[i].email.toLowerCase() === lower) {
+          return accounts[i];
+        }
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  function isMemberLoggedIn() {
+    return !!getMemberAccount();
+  }
+
+  function saveWaitlistEntry(entry) {
+    try {
+      var raw = localStorage.getItem(WAITLIST_STORAGE_KEY);
+      var list = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(list)) list = [];
+      list.push(
+        Object.assign({ at: new Date().toISOString() }, entry)
+      );
+      localStorage.setItem(WAITLIST_STORAGE_KEY, JSON.stringify(list));
+    } catch (e) {}
+  }
+
+  var waitlistProductId = null;
+
+  function showWaitlistViews(which) {
+    var m = document.getElementById('waitlist-view-member');
+    var g = document.getElementById('waitlist-view-guest');
+    var t = document.getElementById('waitlist-view-thanks');
+    if (which === 'none') {
+      if (m) m.classList.add('is-hidden');
+      if (g) g.classList.add('is-hidden');
+      if (t) t.classList.add('is-hidden');
+      return;
+    }
+    if (m) m.classList.toggle('is-hidden', which !== 'member');
+    if (g) g.classList.toggle('is-hidden', which !== 'guest');
+    if (t) t.classList.toggle('is-hidden', which !== 'thanks');
+  }
+
+  function openWaitlist(productId) {
+    if (!CATALOG[productId]) return;
+    waitlistProductId = productId;
+    var p = CATALOG[productId];
+    var root = document.getElementById('waitlist-root');
+    var title = document.getElementById('waitlist-title');
+    if (title) title.textContent = 'Waitlist — ' + p.name;
+
+    if (isMemberLoggedIn()) {
+      var acc = getMemberAccount();
+      var em = acc && acc.email ? acc.email : getMemberSessionEmail();
+      var copy = document.getElementById('waitlist-member-copy');
+      if (copy) {
+        copy.textContent =
+          "You're on the list. We'll send product updates to " +
+          em +
+          ' as soon as ' +
+          p.name +
+          ' is available for purchase.';
+      }
+      showWaitlistViews('member');
+    } else {
+      var intro = document.getElementById('waitlist-guest-intro');
+      if (intro) {
+        intro.textContent =
+          'Enter your details so we can reach you when ' +
+          p.name +
+          ' is available.';
+      }
+      var form = document.getElementById('waitlist-form-guest');
+      if (form) form.reset();
+      showWaitlistViews('guest');
+    }
+
+    if (root) {
+      root.classList.add('is-open');
+      root.setAttribute('aria-hidden', 'false');
+    }
+    var btn = document.getElementById('waitlist-close-btn');
+    if (btn) btn.focus();
+  }
+
+  function closeWaitlist() {
+    var root = document.getElementById('waitlist-root');
+    if (!root) return;
+    root.classList.remove('is-open');
+    root.setAttribute('aria-hidden', 'true');
+    waitlistProductId = null;
+    showWaitlistViews('none');
+  }
+
+  function onWaitlistGuestSubmit(e) {
+    e.preventDefault();
+    var pid = waitlistProductId;
+    if (!pid || !CATALOG[pid]) return;
+    var p = CATALOG[pid];
+    var nameEl = document.getElementById('waitlist-guest-name');
+    var emailEl = document.getElementById('waitlist-guest-email');
+    var phoneEl = document.getElementById('waitlist-guest-phone');
+    var name = nameEl && nameEl.value ? nameEl.value.trim() : '';
+    var email = emailEl && emailEl.value ? emailEl.value.trim() : '';
+    var phone = phoneEl && phoneEl.value ? phoneEl.value.trim() : '';
+    if (!name) {
+      window.alert('Please enter your name.');
+      return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      window.alert('Please enter a valid email.');
+      return;
+    }
+    saveWaitlistEntry({
+      productId: pid,
+      productName: p.name,
+      name: name,
+      email: email,
+      phone: phone || '',
+      member: false,
+    });
+    var thanks = document.getElementById('waitlist-thanks-copy');
+    if (thanks) {
+      thanks.textContent =
+        "Thanks — we'll contact you at " +
+        email +
+        ' when ' +
+        p.name +
+        ' is available. (Demo — stored in this browser only.)';
+    }
+    showWaitlistViews('thanks');
+  }
+
+  function onWaitlistMemberOk() {
+    var pid = waitlistProductId;
+    if (!pid || !CATALOG[pid]) {
+      closeWaitlist();
+      return;
+    }
+    var p = CATALOG[pid];
+    var acc = getMemberAccount();
+    var em = acc && acc.email ? acc.email : getMemberSessionEmail();
+    if (em) {
+      saveWaitlistEntry({
+        productId: pid,
+        productName: p.name,
+        email: em,
+        name: acc && acc.name ? acc.name : '',
+        member: true,
+      });
+    }
+    closeWaitlist();
+  }
 
   function fmt(cents) {
     return '$' + (cents / 100).toFixed(2);
@@ -128,9 +302,9 @@
           '" data-catalog-add>Add to bag — ' +
           fmt(p.priceCents) +
           '</button>'
-        : '<button type="button" class="btn-ghost catalog-card-cta" data-page="' +
+        : '<button type="button" class="btn-ghost catalog-card-cta" data-waitlist-product="' +
           id +
-          '" data-catalog-close>Join the waitlist</button>';
+          '">Join the waitlist</button>';
       return (
         '<article class="catalog-card catalog-card--' +
           p.accent +
@@ -339,6 +513,28 @@
         return;
       }
 
+      var wlProduct = e.target.closest('[data-waitlist-product]');
+      if (wlProduct) {
+        e.preventDefault();
+        openWaitlist(wlProduct.getAttribute('data-waitlist-product'));
+        return;
+      }
+
+      if (e.target.closest('[data-waitlist-member-ok]')) {
+        e.preventDefault();
+        onWaitlistMemberOk();
+        return;
+      }
+
+      if (
+        e.target.closest('[data-waitlist-close]') ||
+        e.target.closest('#waitlist-close-btn')
+      ) {
+        e.preventDefault();
+        closeWaitlist();
+        return;
+      }
+
       if (e.target.closest('[data-catalog-close]')) {
         e.preventDefault();
         closeCatalog();
@@ -355,8 +551,6 @@
       if (catAdd) {
         e.preventDefault();
         addProduct(catAdd.getAttribute('data-add-product'), 1);
-        closeCatalog();
-        openBag();
         return;
       }
 
@@ -439,8 +633,16 @@
       }
     });
 
+    var wlFormGuest = document.getElementById('waitlist-form-guest');
+    if (wlFormGuest) wlFormGuest.addEventListener('submit', onWaitlistGuestSubmit);
+
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
+      var wlRoot = document.getElementById('waitlist-root');
+      if (wlRoot && wlRoot.classList.contains('is-open')) {
+        closeWaitlist();
+        return;
+      }
       var catRoot = document.getElementById('catalog-root');
       if (catRoot && catRoot.classList.contains('is-open')) {
         closeCatalog();

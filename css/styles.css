@@ -2329,4 +2329,537 @@ body.has-nav-open {
   .catalog-title {
     font-size: 1.75rem;
   }
+
+  .member-head {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .member-body {
+    padding: 1.1rem 1.25rem 1.5rem;
+  }
+
+  .member-modal {
+    width: calc(100% - 1rem);
+    max-height: calc(100dvh - 1.5rem);
+    border-radius: 18px;
+  }
+
+  .member-tiers {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Member hub (subscription / account) ─── */
+.member-root {
+  position: fixed;
+  inset: 0;
+  z-index: 420;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.member-root.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.member-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-root.is-open .member-backdrop {
+  opacity: 1;
+}
+
+.member-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(520px, calc(100% - 2rem));
+  max-height: calc(100vh - 3rem);
+  transform: translate(-50%, -48%) scale(0.97);
+  opacity: 0;
+  transition: transform 0.32s cubic-bezier(0.34, 1.1, 0.64, 1), opacity 0.25s ease;
+  background: var(--mid);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.member-root.is-open .member-modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.member-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.member-eyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.45);
+  margin-bottom: 0.4rem;
+}
+
+.member-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.1rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+.member-body {
+  padding: 1.5rem 2rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.member-view.is-hidden {
+  display: none;
+}
+
+.member-lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(248, 246, 241, 0.82);
+  margin-bottom: 1.25rem;
+}
+
+.member-benefits {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.member-benefits li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.65rem;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(248, 246, 241, 0.78);
+}
+
+.member-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--floss);
+}
+
+.member-benefits--active li::before {
+  background: var(--flow);
+}
+
+.member-subh {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.85rem;
+  font-weight: 400;
+}
+
+.member-tiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.35rem;
+}
+
+.member-tiers--compact {
+  margin-bottom: 0.75rem;
+}
+
+.member-tier-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-tier-card:hover {
+  border-color: rgba(0, 201, 177, 0.35);
+}
+
+.member-tier-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.member-tier-input:focus-visible + .member-tier-inner {
+  outline: 2px solid var(--floss);
+  outline-offset: 2px;
+}
+
+.member-tier-input:checked + .member-tier-inner {
+  border-color: var(--floss);
+  box-shadow: 0 0 0 1px rgba(0, 201, 177, 0.25);
+}
+
+.member-tier-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1rem 0.95rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+}
+
+.member-tier-name {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.member-tier-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  color: var(--floss);
+}
+
+.member-tier-note {
+  font-size: 12px;
+  color: rgba(248, 246, 241, 0.5);
+  line-height: 1.4;
+}
+
+.member-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.member-actions-row .btn-teal,
+.member-actions-row .btn-ghost {
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.member-demo-note {
+  margin: 0;
+  font-size: 12px;
+}
+
+.member-back-link {
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.75rem !important;
+  font-size: 13px !important;
+  align-self: flex-start;
+}
+
+.member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.member-form-submit {
+  margin-top: 0.75rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.member-reg-tier-hint {
+  font-size: 13px;
+  color: rgba(248, 246, 241, 0.6);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.member-account-welcome {
+  font-size: 15px;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.member-account-name {
+  font-size: 14px;
+  color: rgba(248, 246, 241, 0.72);
+  margin-bottom: 1.25rem;
+}
+
+.member-account-tier {
+  margin-bottom: 1.25rem;
+}
+
+.member-tier-save {
+  width: 100%;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.member-signout {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.member-google-block {
+  margin-bottom: 0.35rem;
+}
+
+.member-google-mock-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(248, 246, 241, 0.22);
+  background: rgba(248, 246, 241, 0.04);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.member-google-mock-btn:hover {
+  background: rgba(248, 246, 241, 0.09);
+  border-color: rgba(248, 246, 241, 0.35);
+}
+
+.member-google-mock-btn:active {
+  transform: scale(0.99);
+}
+
+.member-google-mock-g {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--white);
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.member-google-mock-badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.45);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+}
+
+.member-google-mock-caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(248, 246, 241, 0.48);
+  margin: 0.55rem 0 0.85rem;
+}
+
+.member-google-live:empty {
+  min-height: 0;
+  margin: 0;
+}
+
+.member-google-live:not(:empty) {
+  margin-top: 0.75rem;
+}
+
+.member-google-btn-wrap {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.member-google-btn-wrap > div {
+  width: 100% !important;
+}
+
+.member-google-config-hint {
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(248, 246, 241, 0.55);
+  margin: 0.65rem 0 0;
+}
+
+.member-google-config-hint[hidden] {
+  display: none !important;
+}
+
+.member-code {
+  font-size: 11px;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(248, 246, 241, 0.08);
+  word-break: break-all;
+}
+
+.member-oauth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0 1rem;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(248, 246, 241, 0.38);
+}
+
+.member-oauth-divider::before,
+.member-oauth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.member-oauth-divider span {
+  flex-shrink: 0;
+}
+
+/* ─── Catalog waitlist modal ─── */
+.waitlist-root {
+  position: fixed;
+  inset: 0;
+  z-index: 415;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.waitlist-root.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.waitlist-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.waitlist-root.is-open .waitlist-backdrop {
+  opacity: 1;
+}
+
+.waitlist-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(440px, calc(100% - 2rem));
+  max-height: calc(100vh - 3rem);
+  transform: translate(-50%, -48%) scale(0.97);
+  opacity: 0;
+  transition: transform 0.28s cubic-bezier(0.34, 1.1, 0.64, 1), opacity 0.22s ease;
+  background: var(--mid);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.waitlist-root.is-open .waitlist-modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.waitlist-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.waitlist-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.waitlist-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow-y: auto;
+}
+
+.waitlist-view.is-hidden {
+  display: none;
+}
+
+.waitlist-lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(248, 246, 241, 0.88);
+  margin: 0 0 1.25rem;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.waitlist-opt {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(248, 246, 241, 0.45);
+}
+
+.waitlist-primary {
+  width: 100%;
+  margin-top: 0.65rem;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .waitlist-modal {
+    width: calc(100% - 1.25rem);
+    border-radius: 16px;
+  }
+
+  .waitlist-head,
+  .waitlist-body {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
 }

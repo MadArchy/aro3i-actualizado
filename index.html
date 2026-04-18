@@ -11,6 +11,8 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Sign-In: set your OAuth 2.0 Web Client ID (Google Cloud Console → APIs & Services → Credentials) -->
+  <meta name="aro-google-client-id" content="">
   <!-- ═══ GOOGLE ANALYTICS 4 ══════════════════════════════ -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-37B93SDXSW"></script>
@@ -59,7 +61,7 @@
       <li class="nav-cart-li">
         <button type="button" class="nav-cart-btn" id="nav-cart-toggle" aria-label="Open shopping bag" aria-expanded="false" aria-controls="shop-sheet">Bag<span class="shop-count shop-count--empty" aria-live="polite">0</span></button>
       </li>
-      <li><a href="#" class="nav-cta" data-cart-open>Shop Now</a></li>
+      <li><a href="#" class="nav-cta" id="nav-member-cta" data-member-open draggable="false"><span id="nav-member-cta-label">Member</span></a></li>
     </ul>
   </nav>
   <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
@@ -1833,6 +1835,41 @@
     </div>
   </div>
 
+  <div id="waitlist-root" class="waitlist-root" aria-hidden="true">
+    <div class="waitlist-backdrop" data-waitlist-close tabindex="-1" aria-hidden="true"></div>
+    <div class="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="waitlist-title">
+      <header class="waitlist-head">
+        <h2 id="waitlist-title" class="waitlist-title">Join the waitlist</h2>
+        <button type="button" class="shop-close" id="waitlist-close-btn" aria-label="Close waitlist">×</button>
+      </header>
+      <div class="waitlist-body">
+        <div id="waitlist-view-member" class="waitlist-view is-hidden">
+          <p class="waitlist-lead" id="waitlist-member-copy"></p>
+          <button type="button" class="btn-teal waitlist-primary" data-waitlist-member-ok>OK</button>
+        </div>
+        <div id="waitlist-view-guest" class="waitlist-view is-hidden">
+          <p class="waitlist-lead" id="waitlist-guest-intro"></p>
+          <form id="waitlist-form-guest" class="waitlist-form" novalidate>
+            <label class="shop-label">Full name
+              <input type="text" id="waitlist-guest-name" name="name" required autocomplete="name" class="shop-input" placeholder="Your name" />
+            </label>
+            <label class="shop-label">Email
+              <input type="email" id="waitlist-guest-email" name="email" required autocomplete="email" class="shop-input" placeholder="you@example.com" />
+            </label>
+            <label class="shop-label">Phone <span class="waitlist-opt">(optional)</span>
+              <input type="tel" id="waitlist-guest-phone" name="phone" autocomplete="tel" class="shop-input" placeholder="Optional" />
+            </label>
+            <button type="submit" class="btn-teal waitlist-primary">Join waitlist</button>
+          </form>
+        </div>
+        <div id="waitlist-view-thanks" class="waitlist-view is-hidden">
+          <p class="waitlist-lead" id="waitlist-thanks-copy"></p>
+          <button type="button" class="btn-teal waitlist-primary" data-waitlist-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="shop-root" class="shop-root" aria-hidden="true">
     <div class="shop-backdrop" id="shop-overlay-hit" data-shop-close tabindex="-1" aria-hidden="true"></div>
     <aside id="shop-sheet" class="shop-sheet" role="dialog" aria-modal="true" aria-labelledby="shop-bag-title">
@@ -1877,6 +1914,143 @@
     </aside>
   </div>
 
+  <div id="member-root" class="member-root" aria-hidden="true">
+    <div class="member-backdrop" data-member-close tabindex="-1" aria-hidden="true"></div>
+    <div class="member-modal" role="dialog" aria-modal="true" aria-labelledby="member-title">
+      <header class="member-head">
+        <div>
+          <span class="member-eyebrow">ARO platform</span>
+          <h2 id="member-title" class="member-title">Membership</h2>
+        </div>
+        <button type="button" class="shop-close" id="member-close" aria-label="Close membership">×</button>
+      </header>
+      <div class="member-body">
+        <div id="member-view-overview" class="member-view">
+          <p class="member-lead">Subscribe for member benefits and early access across the ARO system. Sign in or create an account to choose a plan.</p>
+          <ul class="member-benefits">
+            <li>Early access to new delivery formats and drops</li>
+            <li>Member pricing on eligible products</li>
+            <li>Priority updates and product education</li>
+            <li>Optional subscription tier with expanded perks</li>
+          </ul>
+          <h3 class="member-subh">Plans (demo)</h3>
+          <div class="member-tiers" role="radiogroup" aria-label="Subscription plan">
+            <label class="member-tier-card">
+              <input type="radio" name="member-tier-pick" value="standard" checked class="member-tier-input" />
+              <span class="member-tier-inner">
+                <span class="member-tier-name">Standard</span>
+                <span class="member-tier-price">$9 / mo</span>
+                <span class="member-tier-note">Core benefits</span>
+              </span>
+            </label>
+            <label class="member-tier-card">
+              <input type="radio" name="member-tier-pick" value="plus" class="member-tier-input" />
+              <span class="member-tier-inner">
+                <span class="member-tier-name">Plus</span>
+                <span class="member-tier-price">$19 / mo</span>
+                <span class="member-tier-note">All Standard perks + bonus drops</span>
+              </span>
+            </label>
+          </div>
+          <div class="member-google-block">
+            <button type="button" class="member-google-mock-btn" data-member-google-mock aria-label="Continue with Google, demo">
+              <span class="member-google-mock-g" aria-hidden="true">G</span>
+              <span class="member-google-mock-label">Continue with Google</span>
+              <span class="member-google-mock-badge">Demo</span>
+            </button>
+            <p class="member-google-mock-caption">Mock sign-in — no Google OAuth required for this preview.</p>
+            <div id="member-google-btn-wrap" class="member-google-btn-wrap member-google-live" aria-hidden="true"></div>
+            <p id="member-google-config-hint" class="member-google-config-hint" hidden>
+              Optional: add your OAuth 2.0 Web Client ID to the <code class="member-code">aro-google-client-id</code> meta tag to show the official Google button below.
+            </p>
+          </div>
+          <p class="member-oauth-divider" aria-hidden="true"><span>or</span></p>
+          <div class="member-actions-row">
+            <button type="button" class="btn-teal" data-member-view="signin">Sign in</button>
+            <button type="button" class="btn-ghost" data-member-view="register">Create account</button>
+          </div>
+          <p class="shop-disclaimer member-demo-note">Demo only — no payment is processed. Connect a payment provider when you launch.</p>
+        </div>
+
+        <div id="member-view-signin" class="member-view is-hidden">
+          <button type="button" class="member-back-link btn-ghost" data-member-view="overview">← Back</button>
+          <div class="member-google-block">
+            <button type="button" class="member-google-mock-btn" data-member-google-mock aria-label="Continue with Google, demo">
+              <span class="member-google-mock-g" aria-hidden="true">G</span>
+              <span class="member-google-mock-label">Continue with Google</span>
+              <span class="member-google-mock-badge">Demo</span>
+            </button>
+            <p class="member-google-mock-caption">Mock sign-in — no Google OAuth required for this preview.</p>
+            <div id="member-google-btn-wrap-signin" class="member-google-btn-wrap member-google-live" aria-hidden="true"></div>
+          </div>
+          <p class="member-oauth-divider" aria-hidden="true"><span>or</span></p>
+          <form id="member-form-signin" class="member-form" novalidate>
+            <label class="shop-label">Email
+              <input type="email" id="member-si-email" name="email" required autocomplete="email" class="shop-input" placeholder="you@example.com" />
+            </label>
+            <label class="shop-label">Password
+              <input type="password" id="member-si-password" name="password" required autocomplete="current-password" class="shop-input" placeholder="••••••••" minlength="8" />
+            </label>
+            <button type="submit" class="btn-teal member-form-submit">Sign in</button>
+          </form>
+        </div>
+
+        <div id="member-view-register" class="member-view is-hidden">
+          <button type="button" class="member-back-link btn-ghost" data-member-view="overview">← Back</button>
+          <form id="member-form-register" class="member-form" novalidate>
+            <label class="shop-label">Full name
+              <input type="text" id="member-reg-name" name="name" required autocomplete="name" class="shop-input" placeholder="Your name" />
+            </label>
+            <label class="shop-label">Email
+              <input type="email" id="member-reg-email" name="email" required autocomplete="email" class="shop-input" placeholder="you@example.com" />
+            </label>
+            <label class="shop-label">Password
+              <input type="password" id="member-reg-password" name="password" required autocomplete="new-password" class="shop-input" placeholder="At least 8 characters" minlength="8" />
+            </label>
+            <label class="shop-label">Confirm password
+              <input type="password" id="member-reg-password2" name="password2" required autocomplete="new-password" class="shop-input" placeholder="Repeat password" minlength="8" />
+            </label>
+            <p class="member-reg-tier-hint">Your selected plan: <strong id="member-reg-tier-label">Standard</strong> — change it on the overview before signing up.</p>
+            <button type="submit" class="btn-teal member-form-submit">Create account</button>
+          </form>
+        </div>
+
+        <div id="member-view-account" class="member-view is-hidden">
+          <p class="member-account-welcome">Signed in as <strong id="member-account-email"></strong></p>
+          <p class="member-account-name" id="member-account-name-wrap">Name: <span id="member-account-name"></span></p>
+          <div class="member-account-tier">
+            <h3 class="member-subh">Your plan</h3>
+            <div class="member-tiers member-tiers--compact" role="radiogroup" aria-label="Update plan">
+              <label class="member-tier-card">
+                <input type="radio" name="member-tier-account" value="standard" class="member-tier-input member-tier-account-input" />
+                <span class="member-tier-inner">
+                  <span class="member-tier-name">Standard</span>
+                  <span class="member-tier-price">$9 / mo</span>
+                </span>
+              </label>
+              <label class="member-tier-card">
+                <input type="radio" name="member-tier-account" value="plus" class="member-tier-input member-tier-account-input" />
+                <span class="member-tier-inner">
+                  <span class="member-tier-name">Plus</span>
+                  <span class="member-tier-price">$19 / mo</span>
+                </span>
+              </label>
+            </div>
+            <button type="button" class="btn-teal member-tier-save" id="member-save-tier">Update plan</button>
+          </div>
+          <ul class="member-benefits member-benefits--active">
+            <li>Your member benefits are active for this demo session.</li>
+            <li>Use member pricing at checkout when your store is connected.</li>
+          </ul>
+          <button type="button" class="btn-ghost member-signout" id="member-sign-out">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="js/member.js"></script>
+  <script src="js/seed-test-user.js"></script>
   <script src="js/shop.js"></script>
 </body>
 
