@@ -5,42 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ARO — Targeted Delivery</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Google Sign-In: set your OAuth 2.0 Web Client ID (Google Cloud Console → APIs & Services → Credentials) -->
-  <meta name="aro-google-client-id" content="">
-  <!-- ═══ GOOGLE ANALYTICS 4 ══════════════════════════════ -->
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37B93SDXSW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-37B93SDXSW');
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-T82P6KNL');</script>
-  <!-- End Google Tag Manager -->
+  <!-- SEO / social -->
+  <meta name="description" content="ARO is a precision wellness system — gingival delivery floss, targeted-absorption picks, dissolvable powders, smarter pills, and a daily fuel. The smarter way to take your vitamins.">
+  <meta name="keywords" content="ARO, wellness, vitamins, supplements, floss, pick, flow, ez, fuel, targeted delivery">
+  <meta name="author" content="ARO">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ARO — Targeted Delivery">
+  <meta property="og:description" content="The smarter way to take your vitamins.">
+  <meta property="og:image" content="aro_floss.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ARO — Targeted Delivery">
+  <meta name="twitter:description" content="The smarter way to take your vitamins.">
+
+  <!-- Inline SVG favicon — no external file -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0A'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Arial Black, sans-serif' font-size='34' font-weight='900' fill='%2300C9B1'%3EA%3C/text%3E%3C/svg%3E">
+
+  <!-- Local fonts — preloaded for fast render -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/bebas-neue-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Optional Google Sign-In: set your OAuth 2.0 Web Client ID to enable.
+       When empty, the app runs 100% offline and only local email+password login is shown. -->
+  <meta name="aro-google-client-id" content="">
 </head>
 
 <body>
-  <script src="js/main.js"></script>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T82P6KNL" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="#page-home">Skip to content</a>
+  <button type="button" class="page-back-btn" id="page-back-btn" aria-label="Go back" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">←</span>
+  </button>
   
   <!-- ════════ NAV ════════ -->
   <nav>
@@ -80,8 +79,8 @@
         <p class="hero-slogan">"The smarter way to take your vitamins."</p>
         <p class="hero-sub">Stop guessing if your vitamins and supplements are working. ARO delivers them exactly where
           they need to go — for results you can actually feel.</p>
-        <div class="hero-actions">
-          <p class="hero-slogan">Explore our products.</p>
+        <div class="hero-actions hero-actions--invite">
+          <p class="hero-invite" data-letter-reveal>Explore our products.</p>
         </div>
         <div class="hero-pills">
           <div class="hero-pill p-floss" data-page="floss"><span class="pdot pd-floss"></span>ARO-FLOSS</div>
@@ -2048,10 +2047,25 @@
     </div>
   </div>
 
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="js/member.js"></script>
-  <script src="js/seed-test-user.js"></script>
-  <script src="js/shop.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/member.js" defer></script>
+  <script src="js/seed-test-user.js" defer></script>
+  <script src="js/shop.js" defer></script>
+  <script src="js/hero-particles.js" defer></script>
+  <script>
+    // Load Google Sign-In only when an OAuth 2.0 Client ID is configured.
+    // Without it, the app runs 100% offline and relies on local email+password.
+    (function () {
+      var meta = document.querySelector('meta[name="aro-google-client-id"]');
+      var cid = meta && meta.getAttribute('content') ? meta.getAttribute('content').trim() : '';
+      if (!cid) return;
+      var s = document.createElement('script');
+      s.src = 'https://accounts.google.com/gsi/client';
+      s.async = true;
+      s.defer = true;
+      document.head.appendChild(s);
+    })();
+  </script>
 </body>
 
 </html>

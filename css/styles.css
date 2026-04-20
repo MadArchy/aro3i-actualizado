@@ -1,4 +1,31 @@
-﻿:root {
+﻿/* ══════════════════════════════════════
+   LOCAL FONTS — no external CDN
+══════════════════════════════════════ */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/bebas-neue-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('../fonts/dm-sans.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('../fonts/dm-sans-italic.woff2') format('woff2');
+}
+
+:root {
   --black: #0A0A0A;
   --white: #F8F6F1;
   --mid: #141414;
@@ -14,6 +41,11 @@
   --flow-dim: rgba(110, 231, 122, 0.12);
   --ez-dim: rgba(255, 184, 48, 0.12);
   --fuel-dim: rgba(255, 90, 77, 0.12);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --tap-min: 44px;
 }
 
 * {
@@ -22,18 +54,90 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--black);
   color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   font-size: 16px;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+
+/* Better focus ring for keyboard users; hidden on mouse/touch */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid var(--floss);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Media defaults */
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 201, 177, 0.35);
+  color: var(--white);
+}
+
+/* Accessible skip link — only visible when focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .75rem 1rem;
+  background: var(--floss);
+  color: #0a0a0a;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-120%);
+  transition: transform .2s ease;
+  z-index: 2000;
+  text-decoration: none;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Touch-friendly interactive elements on mobile */
+button,
+[role="button"],
+.nav-cta,
+.nav-cart-btn,
+.hero-pill,
+.btn-teal,
+.btn-ghost {
+  touch-action: manipulation;
+}
+
+/* Hover styles only apply on devices that can truly hover */
+@media (hover: none) {
+  a:hover, button:hover { background-color: initial; }
 }
 
 /* PAGE TRANSITIONS */
@@ -86,6 +190,45 @@ nav {
   background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
+}
+
+/* Floating back arrow for internal pages */
+.page-back-btn {
+  position: fixed;
+  top: calc(5.2rem + var(--safe-top));
+  left: calc(1rem + var(--safe-left));
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 246, 241, 0.22);
+  background: rgba(10, 10, 10, 0.78);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, border-color .2s ease, background .2s ease;
+  z-index: 280;
+}
+
+.page-back-btn:hover {
+  border-color: rgba(0, 201, 177, 0.65);
+  background: rgba(0, 201, 177, 0.15);
+}
+
+.page-back-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-logo {
@@ -488,11 +631,90 @@ footer {
   background: radial-gradient(ellipse 70% 55% at 50% 25%, rgba(0, 201, 177, 0.13) 0%, transparent 65%), radial-gradient(ellipse 55% 45% at 15% 85%, rgba(180, 143, 255, 0.1) 0%, transparent 55%), radial-gradient(ellipse 55% 45% at 85% 80%, rgba(255, 184, 48, 0.09) 0%, transparent 55%);
 }
 
+/* Antigravity-style animated perspective grid */
 .hero-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(248, 246, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(248, 246, 241, 0.03) 1px, transparent 1px);
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 900px;
+  perspective-origin: 50% 50%;
+  background-image:
+    linear-gradient(rgba(248, 246, 241, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248, 246, 241, 0.025) 1px, transparent 1px);
   background-size: 64px 64px;
+}
+
+.hero-grid::before,
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  height: 160%;
+  background-image:
+    linear-gradient(rgba(0, 201, 177, 0.42) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 201, 177, 0.28) 1px, transparent 1px);
+  background-size: 80px 80px;
+  will-change: background-position, transform;
+  -webkit-mask-image: radial-gradient(ellipse 60% 75% at 50% 100%, #000 0%, rgba(0, 0, 0, 0.85) 40%, transparent 85%);
+          mask-image: radial-gradient(ellipse 60% 75% at 50% 100%, #000 0%, rgba(0, 0, 0, 0.85) 40%, transparent 85%);
+}
+
+.hero-grid::before {
+  bottom: -35%;
+  transform: rotateX(62deg);
+  transform-origin: 50% 100%;
+  animation: heroGridFlow 14s linear infinite;
+}
+
+.hero-grid::after {
+  top: -35%;
+  transform: rotateX(-62deg);
+  transform-origin: 50% 0%;
+  opacity: .55;
+  -webkit-mask-image: radial-gradient(ellipse 60% 75% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.85) 40%, transparent 85%);
+          mask-image: radial-gradient(ellipse 60% 75% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.85) 40%, transparent 85%);
+  animation: heroGridFlowReverse 18s linear infinite;
+}
+
+@keyframes heroGridFlow {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 80px, 0 0; }
+}
+
+@keyframes heroGridFlowReverse {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 0 -80px, 0 0; }
+}
+
+/* Particle canvas overlay (antigravity-style floating dots) */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
+
+/* Soft pulsing horizon glow (fed by the existing .hero-bg radials). */
+.hero-bg {
+  animation: heroGlowPulse 9s ease-in-out infinite;
+}
+
+@keyframes heroGlowPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .78; transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid::before,
+  .hero-grid::after,
+  .hero-bg {
+    animation: none !important;
+  }
 }
 
 .hero-content {
@@ -655,6 +877,96 @@ footer {
   margin-top: 2.5rem;
   opacity: 0;
   animation: fadeUp .7s .75s forwards;
+}
+
+/* Variant wrapper used for the "Explore our products." invite. */
+.hero-actions--invite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  animation-delay: .45s;
+}
+
+/* Premium invite label — upgraded typography, gradient color, glow. */
+.hero-invite {
+  display: inline-block;
+  font-family: 'Bebas Neue', 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0 0 .28em;
+  line-height: 1.1;
+  color: rgba(248, 246, 241, 0.95);
+  background: linear-gradient(90deg,
+      rgba(248, 246, 241, 0.95) 0%,
+      rgba(248, 246, 241, 0.98) 45%,
+      var(--floss, #00c9b1) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 26px rgba(0, 201, 177, 0.18);
+  position: relative;
+  white-space: nowrap;
+}
+
+.hero-invite::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: clamp(48px, 6vw, 80px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 201, 177, 0.6), transparent);
+  opacity: 0;
+  animation: heroInviteRuleIn .8s .9s forwards;
+}
+
+@media (max-width: 520px) {
+  .hero-invite {
+    font-size: clamp(1.25rem, 5.2vw, 1.7rem);
+    letter-spacing: .2em;
+    padding-left: .2em;
+    white-space: normal;
+  }
+}
+
+.hero-invite .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(18px);
+  filter: blur(6px);
+  animation: heroInviteLetterIn .7s cubic-bezier(.22, .9, .3, 1) forwards;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity, filter;
+}
+
+.hero-invite .letter.space {
+  width: .42em;
+}
+
+@keyframes heroInviteLetterIn {
+  0%   { opacity: 0; transform: translateX(18px); filter: blur(6px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes heroInviteRuleIn {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-invite .letter {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    animation: none;
+  }
+  .hero-invite::after { opacity: 1; animation: none; }
 }
 
 /* Home product cards */
@@ -968,14 +1280,23 @@ footer {
   opacity: 1;
 }
 
-.prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .prod-img-glow {
-  opacity: 0.35 !important;
-  transition: opacity 0.5s ease;
+/* Product hero illustration (image OR SVG) — hidden while the hero video
+   is playing, then revealed with a smooth ease-out once the video ends.
+   Works for every product page: floss, pick, flow, ez, fuel. */
+.prod-hero-img .illus-wrap {
+  transition:
+    opacity .8s ease .25s,
+    transform .85s cubic-bezier(0.22, 0.9, 0.3, 1.15) .25s;
+  will-change: opacity, transform;
 }
 
-.prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .prod-img-el {
-  opacity: 0.85;
-  transition: opacity 0.5s ease;
+.prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .illus-wrap {
+  opacity: 0;
+  transform: scale(0.94) translateY(14px);
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+  transition-delay: 0s;
 }
 
 .prod-hero-text {
@@ -1358,7 +1679,7 @@ footer {
   inset: -40px;
   pointer-events: none;
   z-index: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity .5s ease, transform .5s ease;
 }
 
 .prod-img-el {
@@ -1368,8 +1689,9 @@ footer {
   max-width: 420px;
   max-height: 520px;
   object-fit: contain;
-  transition: transform 0.5s cubic-bezier(0.34, 1.3, 0.64, 1),
-    filter 0.5s ease;
+  transition:
+    transform .5s cubic-bezier(0.34, 1.3, 0.64, 1),
+    filter .5s ease;
   transform-origin: center center;
 }
 
@@ -2065,12 +2387,9 @@ body.has-nav-open {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
   }
 
-  .prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .prod-img-glow {
-    opacity: 0.25 !important;
-  }
-
-  .prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .prod-img-el {
-    opacity: 0.7;
+  .prod-hero:has(.prod-hero-video.is-playing) .prod-hero-img .illus-wrap {
+    opacity: 0;
+    transform: scale(0.94) translateY(14px);
   }
 }
 
@@ -2892,3 +3211,103 @@ body.has-nav-open {
     padding-right: 1.15rem;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE UX POLISH — touch targets, safe areas, tap comfort
+══════════════════════════════════════════════════════════════ */
+
+/* Respect device safe areas (iPhone notch / Android gesture bar) */
+body {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+nav {
+  padding-top: calc(0.9rem + var(--safe-top));
+}
+
+/* Minimum 44x44 tap target on all interactive elements */
+@media (pointer: coarse), (max-width: 960px) {
+  button,
+  .nav-cart-btn,
+  .nav-cta,
+  .btn-teal,
+  .btn-ghost,
+  .hero-pill,
+  a[data-page],
+  .nav-burger,
+  [role="button"] {
+    min-height: var(--tap-min);
+  }
+
+  .nav-cart-btn,
+  .nav-cta,
+  .btn-teal,
+  .btn-ghost {
+    padding-top: .85rem;
+    padding-bottom: .85rem;
+  }
+
+  .hero-pill {
+    padding: .7rem 1rem;
+    font-size: 13px;
+  }
+
+  /* Prevent iOS auto-zoom on focus when input font-size is < 16px */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Slightly roomier page padding and typography on small devices */
+@media (max-width: 520px) {
+  .hero {
+    padding: 6.5rem 1.1rem 4rem;
+    min-height: 100svh;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: .22em;
+  }
+
+  .hero-sub {
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  .hero-pills {
+    gap: .5rem;
+    row-gap: .55rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 960px) {
+  .page-back-btn {
+    top: calc(5.7rem + var(--safe-top));
+    left: calc(.7rem + var(--safe-left));
+  }
+}
+
+/* Fix potential horizontal overflow sources */
+img,
+video,
+canvas,
+.hero-grid,
+.hero-particles {
+  max-width: 100%;
+}
+
+/* Momentum scrolling on iOS for any internal scroll containers */
+.nav-links,
+.shop-sheet,
+.member-modal,
+.waitlist-modal,
+.catalog-root {
+  -webkit-overflow-scrolling: touch;
+}
+
